@@ -1,0 +1,16 @@
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\DAL.deps.json
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\DAL.dll
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\DAL.pdb
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.dll
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.EntityFrameworkCore.Relational.xml
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.EntityFrameworkCore.SqlServer.xml
+F:\VS\GitRepository\Wasalee\DAL\bin\Release\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.xml
+F:\VS\GitRepository\Wasalee\DAL\obj\Release\netcoreapp2.0\DAL.csproj.CoreCompileInputs.cache
+F:\VS\GitRepository\Wasalee\DAL\obj\Release\netcoreapp2.0\DAL.AssemblyInfoInputs.cache
+F:\VS\GitRepository\Wasalee\DAL\obj\Release\netcoreapp2.0\DAL.AssemblyInfo.cs
+F:\VS\GitRepository\Wasalee\DAL\obj\Release\netcoreapp2.0\DAL.dll
+F:\VS\GitRepository\Wasalee\DAL\obj\Release\netcoreapp2.0\DAL.pdb

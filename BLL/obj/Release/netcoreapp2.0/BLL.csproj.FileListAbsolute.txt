@@ -1,0 +1,11 @@
+F:\VS\GitRepository\Wasalee\BLL\bin\Release\netcoreapp2.0\BLL.deps.json
+F:\VS\GitRepository\Wasalee\BLL\bin\Release\netcoreapp2.0\BLL.dll
+F:\VS\GitRepository\Wasalee\BLL\bin\Release\netcoreapp2.0\BLL.pdb
+F:\VS\GitRepository\Wasalee\BLL\bin\Release\netcoreapp2.0\DAL.dll
+F:\VS\GitRepository\Wasalee\BLL\bin\Release\netcoreapp2.0\DAL.pdb
+F:\VS\GitRepository\Wasalee\BLL\obj\Release\netcoreapp2.0\BLL.csprojResolveAssemblyReference.cache
+F:\VS\GitRepository\Wasalee\BLL\obj\Release\netcoreapp2.0\BLL.csproj.CoreCompileInputs.cache
+F:\VS\GitRepository\Wasalee\BLL\obj\Release\netcoreapp2.0\BLL.AssemblyInfoInputs.cache
+F:\VS\GitRepository\Wasalee\BLL\obj\Release\netcoreapp2.0\BLL.AssemblyInfo.cs
+F:\VS\GitRepository\Wasalee\BLL\obj\Release\netcoreapp2.0\BLL.dll
+F:\VS\GitRepository\Wasalee\BLL\obj\Release\netcoreapp2.0\BLL.pdb
