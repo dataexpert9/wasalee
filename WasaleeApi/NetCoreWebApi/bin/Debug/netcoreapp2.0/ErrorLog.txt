@@ -1,0 +1,164 @@
+DateTime : 7/20/2018 12:54:59 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.ChangeUserPassword(Int32 User_Id, String OldPassword, String NewPassword) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 74
+   at NetCoreWebApi.Controllers.UsersController.<ChangeUserPassword>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 118
+DateTime : 7/21/2018 11:25:10 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 57
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 123
+DateTime : 7/21/2018 11:32:27 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 58
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 123
+DateTime : 7/21/2018 12:49:15 PM
+
+
+MessageInvalid object name 'Settings'.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 12:51:44 PM
+
+
+MessageInvalid object name 'Settings'.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 12:58:21 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 12:59:15 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 1:00:22 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password)
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/30/2018 2:55:19 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Driver -> DriverDTO (Destination member list)
+DAL.Driver -> Wasalee.DTOs.DriverDTO (Destination member list)
+
+Unmapped properties:
+Token
+
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model)
+DateTime : 7/30/2018 2:55:46 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Driver -> DriverDTO (Destination member list)
+DAL.Driver -> Wasalee.DTOs.DriverDTO (Destination member list)
+
+Unmapped properties:
+Token
+
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model)
+DateTime : 7/30/2018 2:55:47 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Driver -> DriverDTO (Destination member list)
+DAL.Driver -> Wasalee.DTOs.DriverDTO (Destination member list)
+
+Unmapped properties:
+Token
+
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model)
+DateTime : 7/31/2018 11:52:17 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 42
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 41
+
+Inner Exception : Invalid column name 'DropOffLocation'.
+Invalid column name 'PickUpLocation'.
+------******------
+DateTime : 7/31/2018 11:53:58 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 42
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 41
+
+Inner Exception : Invalid column name 'DropOffLocation'.
+Invalid column name 'PickUpLocation'.
+------******------
+DateTime : 7/31/2018 4:41:09 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 42
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 41
+
+Inner Exception : Invalid column name 'DropOffLocation'.
+Invalid column name 'PickUpLocation'.
+------******------

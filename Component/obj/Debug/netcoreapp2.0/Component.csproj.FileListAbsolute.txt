@@ -1,0 +1,26 @@
+H:\Git Repo\LIMO App\Component\bin\Debug\netcoreapp2.0\Component.deps.json
+H:\Git Repo\LIMO App\Component\bin\Debug\netcoreapp2.0\Component.dll
+H:\Git Repo\LIMO App\Component\bin\Debug\netcoreapp2.0\Component.pdb
+H:\Git Repo\LIMO App\Component\obj\Debug\netcoreapp2.0\Component.csproj.CoreCompileInputs.cache
+H:\Git Repo\LIMO App\Component\obj\Debug\netcoreapp2.0\Component.AssemblyInfoInputs.cache
+H:\Git Repo\LIMO App\Component\obj\Debug\netcoreapp2.0\Component.AssemblyInfo.cs
+H:\Git Repo\LIMO App\Component\obj\Debug\netcoreapp2.0\Component.dll
+H:\Git Repo\LIMO App\Component\obj\Debug\netcoreapp2.0\Component.pdb
+F:\Projects\Wasalee\LIMO-Application\Component\bin\Debug\netcoreapp2.0\Component.deps.json
+F:\Projects\Wasalee\LIMO-Application\Component\bin\Debug\netcoreapp2.0\Component.dll
+F:\Projects\Wasalee\LIMO-Application\Component\bin\Debug\netcoreapp2.0\Component.pdb
+F:\Projects\Wasalee\LIMO-Application\Component\obj\Debug\netcoreapp2.0\Component.AssemblyInfo.cs
+F:\Projects\Wasalee\LIMO-Application\Component\obj\Debug\netcoreapp2.0\Component.dll
+F:\Projects\Wasalee\LIMO-Application\Component\obj\Debug\netcoreapp2.0\Component.pdb
+F:\Projects\Wasalee\LIMO-Application\Component\obj\Debug\netcoreapp2.0\Component.csprojAssemblyReference.cache
+F:\Projects\Wasalee\LIMO-Application\Component\obj\Debug\netcoreapp2.0\Component.csproj.CoreCompileInputs.cache
+F:\Projects\Wasalee\LIMO-Application\Component\obj\Debug\netcoreapp2.0\Component.AssemblyInfoInputs.cache
+F:\Projects\Wasalee\WasalLeeAPI\Component\bin\Debug\netcoreapp2.0\Component.deps.json
+F:\Projects\Wasalee\WasalLeeAPI\Component\bin\Debug\netcoreapp2.0\Component.dll
+F:\Projects\Wasalee\WasalLeeAPI\Component\bin\Debug\netcoreapp2.0\Component.pdb
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Debug\netcoreapp2.0\Component.csprojAssemblyReference.cache
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Debug\netcoreapp2.0\Component.csproj.CoreCompileInputs.cache
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Debug\netcoreapp2.0\Component.AssemblyInfoInputs.cache
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Debug\netcoreapp2.0\Component.AssemblyInfo.cs
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Debug\netcoreapp2.0\Component.dll
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Debug\netcoreapp2.0\Component.pdb

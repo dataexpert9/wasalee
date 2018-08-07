@@ -18,6 +18,9 @@ namespace Wasalee.DTOs
         public bool IsNotificationsOn { get; set; }
         public int SignInType { get; set; }
         public string Email { get; set; }
+        public bool IsAvailable { get; set; }
         public string Token { get; set; }
+        public string BriefInfo { get; set; }
+        public string WorkHistory { get; set; }
     }
 }

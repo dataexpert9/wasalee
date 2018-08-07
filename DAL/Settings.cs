@@ -7,8 +7,7 @@ namespace DAL
     public class Settings
     {
         public int Id { get; set; }
-        public string AboutUs { get; set; }
-        public string PrivacyPolicy { get; set; }
-        public string TermsOfUse { get; set; }
+        public bool IsDeleted { get; set; }
+        public virtual List<SettingsML> SettingsML { get; set; }
     }
 }

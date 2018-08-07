@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Component.Utility;
+using Component.Utility.Enums;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,10 @@ namespace Wasalee.DTOs
         public string LastName { get; set; }
 
         public string FullName { get; set; }
+
+        public string Location { get; set; }
+
+        public CultureType Culture { get; set; }
 
         public string ProfilePictureUrl { get; set; }
 
@@ -36,9 +42,19 @@ namespace Wasalee.DTOs
 
         public bool IsNotificationsOn { get; set; }
 
-        public string Location { get; set; }
-
         public string Token { get; set; }
-        
+
+        public string VerificationCode { get; set; }
+
+        public SettingDTO Settings { get; set; }
+
+    }
+
+    public class SettingDTO
+    {
+        public int Id { get; set; }
+        public string AboutUs { get; set; }
+        public string PrivacyPolicy { get; set; }
+        public string TermsOfUse { get; set; }
     }
 }

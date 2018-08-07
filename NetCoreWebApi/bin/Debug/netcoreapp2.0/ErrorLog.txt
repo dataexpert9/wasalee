@@ -1,8 +1,816 @@
-DateTime : 7/7/2018 1:59:34 PM
+DateTime : 7/20/2018 12:54:59 PM
 
 
-MessageMapper not initialized. Call Initialize with appropriate configuration. If you are trying to use mapper instances through a container or otherwise, make sure you do not have any calls to the static Mapper.Map methods, and if you're using ProjectTo or UseAsDataSource extension methods, make sure you pass in the appropriate IConfigurationProvider instance.
+MessageObject reference not set to an instance of an object.
 
-StackTrace   at AutoMapper.Mapper.get_Instance() in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 32
-   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 92
-   at NetCoreWebApi.Controllers.UsersController.Register(RegisterBindingModel model) in F:\VS\GitRepository\Wasalee\NetCoreWebApi\Controllers\UsersController.cs:line 65
+StackTrace   at BLL.Implementation.BOUser.ChangeUserPassword(Int32 User_Id, String OldPassword, String NewPassword) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 74
+   at NetCoreWebApi.Controllers.UsersController.<ChangeUserPassword>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 118
+DateTime : 7/21/2018 11:25:10 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 57
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 123
+DateTime : 7/21/2018 11:32:27 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 58
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 123
+DateTime : 7/21/2018 12:49:15 PM
+
+
+MessageInvalid object name 'Settings'.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 12:51:44 PM
+
+
+MessageInvalid object name 'Settings'.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 12:58:21 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 12:59:15 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 60
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/21/2018 1:00:22 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password)
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 7/30/2018 2:55:19 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Driver -> DriverDTO (Destination member list)
+DAL.Driver -> Wasalee.DTOs.DriverDTO (Destination member list)
+
+Unmapped properties:
+Token
+
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model)
+DateTime : 7/30/2018 2:55:46 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Driver -> DriverDTO (Destination member list)
+DAL.Driver -> Wasalee.DTOs.DriverDTO (Destination member list)
+
+Unmapped properties:
+Token
+
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model)
+DateTime : 7/30/2018 2:55:47 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Driver -> DriverDTO (Destination member list)
+DAL.Driver -> Wasalee.DTOs.DriverDTO (Destination member list)
+
+Unmapped properties:
+Token
+
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model)
+DateTime : 7/31/2018 11:52:17 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 42
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 41
+
+Inner Exception : Invalid column name 'DropOffLocation'.
+Invalid column name 'PickUpLocation'.
+------******------
+DateTime : 7/31/2018 11:53:58 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 42
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 41
+
+Inner Exception : Invalid column name 'DropOffLocation'.
+Invalid column name 'PickUpLocation'.
+------******------
+DateTime : 7/31/2018 4:41:09 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 42
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 41
+
+Inner Exception : Invalid column name 'DropOffLocation'.
+Invalid column name 'PickUpLocation'.
+------******------
+DateTime : 8/1/2018 11:42:48 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 43
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 43
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/1/2018 11:43:09 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 43
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 43
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/2/2018 11:08:32 AM
+
+
+MessageInvalid column name 'IsAvailable'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at BLL.Implementation.BODriver.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 54
+   at Wasalee.Controllers.DriverController.<Login>d__7.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 88
+DateTime : 8/3/2018 12:22:33 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOUser.InsertUser(RegisterBindingModel user) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 64
+
+Inner Exception : Invalid column name 'FullName'.
+------******------
+DateTime : 8/3/2018 3:00:12 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model)
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model)
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/3/2018 3:02:50 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 66
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 48
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/3/2018 3:35:38 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+===============================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+RequestItem -> RequestItemDTO (Destination member list)
+DAL.RequestItem -> Wasalee.DTOs.RequestItemDTO (Destination member list)
+
+Unmapped properties:
+Name
+Description
+
+
+StackTrace   at lambda_method(Closure , RequestItem , RequestItemDTO , ResolutionContext )
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 49
+DateTime : 8/3/2018 3:36:02 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+===============================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+RequestItem -> RequestItemDTO (Destination member list)
+DAL.RequestItem -> Wasalee.DTOs.RequestItemDTO (Destination member list)
+
+Unmapped properties:
+Name
+Description
+
+
+StackTrace   at lambda_method(Closure , RequestItem , RequestItemDTO , ResolutionContext )
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 49
+DateTime : 8/3/2018 3:36:46 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+===============================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+RequestItem -> RequestItemDTO (Destination member list)
+DAL.RequestItem -> Wasalee.DTOs.RequestItemDTO (Destination member list)
+
+Unmapped properties:
+Name
+Description
+
+
+StackTrace   at lambda_method(Closure , RequestItem , RequestItemDTO , ResolutionContext )
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 49
+DateTime : 8/3/2018 3:37:27 PM
+
+
+MessageError mapping types.
+
+Mapping types:
+IEnumerable`1 -> List`1
+System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IEnumerable`1[[DAL.RequestItemML, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] -> System.Collections.Generic.List`1[[Wasalee.DTOs.RequestItemDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+StackTrace   at lambda_method(Closure , IEnumerable`1 , List`1 , ResolutionContext )
+   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 79
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=========================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+IEnumerable`1 -> RequestItemDTO (Destination member list)
+System.Collections.Generic.IEnumerable`1[[DAL.RequestItemML, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Wasalee.DTOs.RequestItemDTO (Destination member list)
+
+Unmapped properties:
+Id
+Name
+Quantity
+PriceRangeFrom
+PriceRangeTo
+Description
+DeliveryDate
+DeliveryTime
+PaymentMethod
+Status
+IsDeleted
+User_Id
+RequestItemImages
+
+------******------
+DateTime : 8/3/2018 3:40:37 PM
+
+
+MessageError mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[DAL.RequestItem, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Wasalee.DTOs.RequestItemDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+StackTrace   at lambda_method(Closure , List`1 , List`1 , ResolutionContext )
+   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 79
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+===============================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+RequestItem -> RequestItemDTO (Destination member list)
+DAL.RequestItem -> Wasalee.DTOs.RequestItemDTO (Destination member list)
+
+Unmapped properties:
+Name
+Description
+
+------******------
+DateTime : 8/4/2018 9:48:38 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at Wasalee.Utility.ExtensionMethods.GetLanguage(Int16 LanguageEnum) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Utility\ExtensionMethods.cs:line 31
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 124
+DateTime : 8/4/2018 9:49:31 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at Wasalee.Utility.ExtensionMethods.GetLanguage(Int16 LanguageEnum) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Utility\ExtensionMethods.cs:line 31
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 124
+DateTime : 8/4/2018 9:50:49 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at Wasalee.Utility.ExtensionMethods.GetLanguage(Int16 LanguageEnum) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Utility\ExtensionMethods.cs:line 31
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 124
+DateTime : 8/4/2018 9:54:35 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at Wasalee.Utility.ExtensionMethods.GetLanguage(Int16 LanguageEnum) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Utility\ExtensionMethods.cs:line 31
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 124
+DateTime : 8/4/2018 9:54:41 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at Wasalee.Utility.ExtensionMethods.GetLanguage(Int16 LanguageEnum) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Utility\ExtensionMethods.cs:line 31
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 124
+DateTime : 8/4/2018 9:57:23 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at Wasalee.Utility.ExtensionMethods.GetLanguage(Int16 LanguageEnum) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Utility\ExtensionMethods.cs:line 31
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 124
+DateTime : 8/4/2018 9:57:32 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at Wasalee.Utility.ExtensionMethods.GetLanguage(Int16 LanguageEnum) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Utility\ExtensionMethods.cs:line 31
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 124
+DateTime : 8/4/2018 10:49:04 AM
+
+
+MessageThe Include property lambda expression 'y => {from UserML z in y.UserML where (Convert([z].Culture, Int32) == Convert(__culture_0, Int32)) select [z] => FirstOrDefault()}' is invalid. The expression should represent a property access: 't => t.MyProperty'. To target navigations declared on derived types, specify an explicitly typed lambda parameter of the target type, E.g. '(Derived d) => d.MyProperty'. For more information on including related data, see http://go.microsoft.com/fwlink/?LinkID=746393.
+
+StackTrace   at BLL.Implementation.BOUser.AuthenticateCredentials(String username, String password, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 93
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 126
+DateTime : 8/4/2018 10:55:37 AM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=======================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+HashSet`1 -> UserDTO (Destination member list)
+System.Collections.Generic.HashSet`1[[DAL.UserML, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Wasalee.DTOs.UserDTO (Destination member list)
+
+Unmapped properties:
+Id
+FirstName
+LastName
+FullName
+Location
+Culture
+ProfilePictureUrl
+Email
+Phone
+ZipCode
+DateofBirth
+SignInType
+Status
+EmailConfirmed
+PhoneConfirmed
+IsNotificationsOn
+Token
+VerificationCode
+Settings
+
+
+StackTrace   at lambda_method(Closure , ICollection`1 , UserDTO , ResolutionContext )
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 131
+DateTime : 8/4/2018 11:16:27 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+User -> UserDTO
+DAL.User -> Wasalee.DTOs.UserDTO
+
+Type Map configuration:
+User -> UserDTO
+DAL.User -> Wasalee.DTOs.UserDTO
+
+Property:
+Settings
+
+StackTrace   at lambda_method(Closure , User , UserDTO , ResolutionContext )
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext()
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+========================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Settings -> SettingDTO (Destination member list)
+DAL.Settings -> Wasalee.DTOs.SettingDTO (Destination member list)
+
+Unmapped properties:
+AboutUs
+PrivacyPolicy
+TermsOfUse
+
+------******------
+DateTime : 8/4/2018 11:17:07 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+User -> UserDTO
+DAL.User -> Wasalee.DTOs.UserDTO
+
+Type Map configuration:
+User -> UserDTO
+DAL.User -> Wasalee.DTOs.UserDTO
+
+Property:
+Settings
+
+StackTrace   at lambda_method(Closure , User , UserDTO , ResolutionContext )
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext()
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+========================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Settings -> SettingDTO (Destination member list)
+DAL.Settings -> Wasalee.DTOs.SettingDTO (Destination member list)
+
+Unmapped properties:
+AboutUs
+PrivacyPolicy
+TermsOfUse
+
+------******------
+DateTime : 8/4/2018 11:17:45 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+User -> UserDTO
+DAL.User -> Wasalee.DTOs.UserDTO
+
+Type Map configuration:
+User -> UserDTO
+DAL.User -> Wasalee.DTOs.UserDTO
+
+Property:
+Settings
+
+StackTrace   at lambda_method(Closure , User , UserDTO , ResolutionContext )
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext()
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+========================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+Settings -> SettingDTO (Destination member list)
+DAL.Settings -> Wasalee.DTOs.SettingDTO (Destination member list)
+
+Unmapped properties:
+AboutUs
+PrivacyPolicy
+TermsOfUse
+
+------******------
+DateTime : 8/4/2018 11:22:30 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext()
+DateTime : 8/4/2018 11:23:12 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext()
+DateTime : 8/4/2018 11:23:20 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext()
+DateTime : 8/4/2018 11:24:20 AM
+
+
+MessageValue cannot be null.
+Parameter name: source
+
+StackTrace   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at NetCoreWebApi.Controllers.UsersController.<Login>d__9.MoveNext()
+DateTime : 8/4/2018 11:46:01 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 67
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 51
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/4/2018 12:31:57 PM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+======================================================================================================================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+RequestItemML -> List`1 (Destination member list)
+DAL.RequestItemML -> System.Collections.Generic.List`1[[Wasalee.DTOs.RequestItemDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] (Destination member list)
+
+Unmapped properties:
+Capacity
+
+
+StackTrace   at lambda_method(Closure , RequestItemML , List`1 , ResolutionContext )
+   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 104
+DateTime : 8/4/2018 12:42:06 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 88
+DateTime : 8/6/2018 9:54:18 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BODriver.InsertDriver(RegisterDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 70
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 56
+
+Inner Exception : Invalid object name 'DriverML'.
+------******------
+DateTime : 8/6/2018 9:55:39 AM
+
+
+Message
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=======================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+DriverML -> DriverDTO (Destination member list)
+DAL.DriverML -> Wasalee.DTOs.DriverDTO (Destination member list)
+
+Unmapped properties:
+DateOfBirth
+PhoneNo
+LicenseNo
+Latitude
+Longitude
+IsNotificationsOn
+SignInType
+Email
+IsAvailable
+Token
+
+
+StackTrace   at lambda_method(Closure , DriverML , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.Register(RegisterDriverBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 60
+DateTime : 8/7/2018 11:36:59 AM
+
+
+MessageInvalid column name 'PickUpLatitude'.
+Invalid column name 'PickUpLongitude'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BLL.Implementation.BODriver.GetAllRequests(Int32 Items, Int32 Page) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 88
+   at Wasalee.Controllers.DriverController.<GetAllRequests>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 125
+DateTime : 8/7/2018 11:37:48 AM
+
+
+MessageInvalid column name 'PickUpLatitude'.
+Invalid column name 'PickUpLongitude'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BLL.Implementation.BOFetch.GetPendingRequests(Int32 User_Id, Int32 Items, Int32 Page, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 101
+   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page, Nullable`1 Type) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 90
+DateTime : 8/7/2018 11:37:57 AM
+
+
+MessageInvalid column name 'PickUpLatitude'.
+Invalid column name 'PickUpLongitude'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BLL.Implementation.BOFetch.GetPendingRequests(Int32 User_Id, Int32 Items, Int32 Page, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 101
+   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page, Nullable`1 Type) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 90

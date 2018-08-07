@@ -1,0 +1,9 @@
+F:\Projects\Wasalee\WasalLeeAPI\Component\bin\Release\netcoreapp2.0\Component.deps.json
+F:\Projects\Wasalee\WasalLeeAPI\Component\bin\Release\netcoreapp2.0\Component.dll
+F:\Projects\Wasalee\WasalLeeAPI\Component\bin\Release\netcoreapp2.0\Component.pdb
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Release\netcoreapp2.0\Component.csprojAssemblyReference.cache
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Release\netcoreapp2.0\Component.csproj.CoreCompileInputs.cache
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Release\netcoreapp2.0\Component.AssemblyInfoInputs.cache
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Release\netcoreapp2.0\Component.AssemblyInfo.cs
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Release\netcoreapp2.0\Component.dll
+F:\Projects\Wasalee\WasalLeeAPI\Component\obj\Release\netcoreapp2.0\Component.pdb

@@ -11,21 +11,23 @@ namespace DAL
         public User()
         {
             UserDevices = new HashSet<UserDevice>();
+            //Settings = new Settings();
         }
 
         public int Id { get; set; }
         
-        public string FirstName { get; set; }
+        //public string FirstName { get; set; }
         
-        public string LastName { get; set; }
+        //public string LastName { get; set; }
         
-        public string FullName { get; set; }
+        //public string FullName { get; set; }
 
         public string ProfilePictureUrl { get; set; }
 
         public string Email { get; set; }
 
         public string PhoneNo { get; set; }
+
 
         [JsonIgnore]
         public string Password { get; set; }
@@ -53,6 +55,13 @@ namespace DAL
         
         public virtual ICollection<UserDevice> UserDevices { get; set; }
 
-        public string Location { get; set; }
+        public virtual ICollection<RequestItem> RequestItem { get; set; }
+
+        public virtual ICollection<UserML> UserML { get; set; }
+
+        //public string Location { get; set; }
+
+        [NotMapped]
+        public Settings Settings { get; set; }
     }
 }
