@@ -74,7 +74,7 @@ namespace NetCoreWebApi.Controllers
                 if (user != null)
                 {
                     var userDTO = Mapper.Map<User, UserDTO>(user);
-                    userDTO = Mapper.Map(user.UserML.FirstOrDefault(x => x.Culture == culture), userDTO);
+                    //userDTO = Mapper.Map(user.UserML.FirstOrDefault(x => x.Culture == culture), userDTO);
                     if (settings.SettingsML != null)
                         userDTO.Settings = Mapper.Map(settings.SettingsML.FirstOrDefault(x => x.Culture == culture), userDTO.Settings);
                     else
@@ -145,7 +145,6 @@ namespace NetCoreWebApi.Controllers
                 if (user != null)
                 {
                     var userDTO = Mapper.Map<User, UserDTO>(user);
-                    userDTO = Mapper.Map(user.UserML.FirstOrDefault(x => x.Culture == culture), userDTO);
                     if (settings.SettingsML != null)
                         userDTO.Settings = Mapper.Map(settings.SettingsML.FirstOrDefault(x => x.Culture == culture), userDTO.Settings);
                     else

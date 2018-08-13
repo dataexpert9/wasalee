@@ -814,3 +814,372 @@ StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException excepti
    at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
    at BLL.Implementation.BOFetch.GetPendingRequests(Int32 User_Id, Int32 Items, Int32 Page, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 101
    at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page, Nullable`1 Type) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 90
+DateTime : 8/7/2018 1:23:21 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 202
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 354
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Drivers_Driver_Id". The conflict occurred in database "Wasalee", table "dbo.Drivers", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 1:32:42 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 202
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 354
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Drivers_Driver_Id". The conflict occurred in database "Wasalee", table "dbo.Drivers", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 1:34:26 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 202
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 354
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Drivers_Driver_Id". The conflict occurred in database "Wasalee", table "dbo.Drivers", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 1:35:47 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 202
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext()
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Drivers_Driver_Id". The conflict occurred in database "Wasalee", table "dbo.Drivers", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 1:39:26 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 59
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+DateTime : 8/7/2018 1:39:51 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 59
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+DateTime : 8/7/2018 1:40:21 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture)
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+DateTime : 8/7/2018 1:40:41 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture)
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : Invalid column name 'DropOffLatitude'.
+Invalid column name 'DropOffLongitude'.
+------******------
+DateTime : 8/7/2018 1:42:06 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 75
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 1:42:42 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 75
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 1:43:55 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture)
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 4:24:53 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 76
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/7/2018 4:25:13 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 76
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RequestItem_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/8/2018 11:24:22 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 79
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : Invalid column name 'ItemDescription'.
+Invalid column name 'Price'.
+------******------
+DateTime : 8/8/2018 11:25:27 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 79
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : Invalid column name 'ItemDescription'.
+Invalid column name 'Price'.
+------******------
+DateTime : 8/8/2018 12:25:51 PM
+
+
+MessageCollection was modified; enumeration operation may not execute.
+
+StackTrace   at System.ThrowHelper.ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion()
+   at System.Collections.Generic.List`1.Enumerator.MoveNextRare()
+   at Microsoft.EntityFrameworkCore.Query.Expressions.SelectExpression.PushDownSubquery()
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Sql.Internal.SqlServerQuerySqlGenerator.RowNumberPagingExpressionVisitor.VisitSelectExpression(SelectExpression selectExpression)
+   at Microsoft.EntityFrameworkCore.Query.Expressions.SelectExpression.VisitChildren(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Sql.Internal.SqlServerQuerySqlGenerator.RowNumberPagingExpressionVisitor.VisitSelectExpression(SelectExpression selectExpression)
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Sql.Internal.SqlServerQuerySqlGeneratorFactory.CreateDefault(SelectExpression selectExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ShaperCommandContext.GetRelationalCommand(IReadOnlyDictionary`2 parameters)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BLL.Implementation.BODriver.GetRiderRequests(Int32 Driver_Id, Int32 Items, Int32 Page) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 94
+   at Wasalee.Controllers.DriverController.<GetAllRequests>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 147
+DateTime : 8/8/2018 1:53:07 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.DriverController.<GetAllRequests>d__8.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 138
+DateTime : 8/8/2018 2:55:39 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page, Nullable`1 Type) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 100
+DateTime : 8/10/2018 9:52:12 AM
+
+
+MessageInvalid column name 'ProfilePictureUrl'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at BLL.Implementation.BODriver.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 83
+   at Wasalee.Controllers.DriverController.<Login>d__7.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 85
+DateTime : 8/10/2018 9:52:39 AM
+
+
+MessageInvalid column name 'ProfilePictureUrl'.
+
+StackTrace   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at BLL.Implementation.BODriver.AuthenticateCredentials(String username, String password) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 83
+   at Wasalee.Controllers.DriverController.<Login>d__7.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 85
+DateTime : 8/10/2018 10:03:03 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 209
+   at Wasalee.Controllers.DriverController.<RateDriver>d__16.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 391
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/10/2018 10:40:05 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 207
+   at Wasalee.Controllers.DriverController.<RateDriver>d__16.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 391
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/10/2018 10:40:50 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BODriver.ReportProblem(ReportProblemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 226
+   at Wasalee.Controllers.DriverController.<ReportProblem>d__17.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 423
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/13/2018 9:01:34 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[DAL.DriverRating, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Wasalee.DTOs.DriverRatingDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+StackTrace   at lambda_method(Closure , List`1 , List`1 , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverRatings(Int32 Driver_Id, Nullable`1 Items, Nullable`1 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 450
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+DriverRating -> DriverRatingDTO (Destination member list)
+DAL.DriverRating -> Wasalee.DTOs.DriverRatingDTO (Destination member list)
+
+Unmapped properties:
+CreatedDate
+
+------******------

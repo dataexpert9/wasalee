@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DAL.DatabaseExtensions;
+using Component.ResponseFormats;
 
 namespace DAL
 {
     public class Location
     {
-        //public int Id { get; set; }
 
         public DataContext _dbContext { get; set; }
 
@@ -26,51 +26,16 @@ namespace DAL
 
         public double Latitude { get; set; }
 
-        public static Task UpdateLocation(DbContext ctx, string table, Location location, int id)
+        public double Distance(Location destination, int srid=4326)
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
-
-            string query = String.Format(@"UPDATE [dbo].[{0}] SET Location = geography::STPointFromText('POINT(' + CAST({1} AS VARCHAR(20)) + ' ' + CAST({2} AS VARCHAR(20)) + ')', 4326) WHERE(ID = {3})"
-            , table.ToLower(), location.Longitude, location.Latitude, id);
-            return  ctx.Database.ExecuteSqlCommandAsync(query);
-        }
-
-        //public async Task<Location> GetLocation(DbContext ctx, string table, int id)
-        //{
-        //    Location location = new Location();
-
-        //    using (var command = ctx.Database.GetDbConnection().CreateCommand())
-        //    {
-        //        string query = String.Format("SELECT Location.Latitude, Location.Longitude FROM [dbo].[{0}] WHERE Id = {1}"
-        //            , table, id);
-        //        command.CommandText = query;
-        //        ctx.Database.OpenConnection();
-        //        using (var result = command.ExecuteReader())
-        //        {
-        //            if (result.HasRows)
-        //            {
-        //                while (await result.ReadAsync())
-        //                {
-        //                    location.Latitude = result.GetDouble(0);
-        //                    location.Longitude = result.GetDouble(1);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return location;
-        //}
-
-        public double Distance(Location location)
-        {
+            var source = this;
+            
             var Distance = string.Empty;
-            var query = @"DECLARE @target geography = geography::Point(-35.23555, 56.6545, 4326)
-                        DECLARE @orig geography = geography::Point("+location.Latitude+@","+location.Longitude+@", 4326)
+            var query = @"DECLARE @target geography =  geography::Point(" + destination.Latitude + @"," + destination.Longitude + @"," +srid+@")
+                        DECLARE @orig geography = geography::Point(" + source.Latitude + @"," + source.Longitude + @"," + srid + @")
                         SELECT @orig.STDistance(@target) as Distance";
-            //var dDistance = _dbContext.Database.ExecuteSqlCommandAsync(query);
-
             try
             {
-                //var employees = _dbContext.Store.FromSql(query).ToList();
                 var dbConn = _dbContext.Database.GetDbConnection();
                 dbConn.Open();
                 var command = dbConn.CreateCommand();
@@ -80,10 +45,11 @@ namespace DAL
             }
             catch (Exception ex)
             {
-
+                Error.LogError(ex);
                 throw ex;
             }
         }
+
     }
 
 

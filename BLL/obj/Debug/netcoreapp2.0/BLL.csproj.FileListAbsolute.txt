@@ -1,7 +1,9 @@
 F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\BLL.deps.json
 F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\BLL.dll
 F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\BLL.pdb
+F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\Component.dll
 F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\DAL.dll
+F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\Component.pdb
 F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\DAL.pdb
 F:\Projects\Wasalee\WasalLeeAPI\BLL\obj\Debug\netcoreapp2.0\BLL.csprojAssemblyReference.cache
 F:\Projects\Wasalee\WasalLeeAPI\BLL\obj\Debug\netcoreapp2.0\BLL.csproj.CoreCompileInputs.cache
@@ -10,5 +12,3 @@ F:\Projects\Wasalee\WasalLeeAPI\BLL\obj\Debug\netcoreapp2.0\BLL.AssemblyInfo.cs
 F:\Projects\Wasalee\WasalLeeAPI\BLL\obj\Debug\netcoreapp2.0\BLL.csproj.CopyComplete
 F:\Projects\Wasalee\WasalLeeAPI\BLL\obj\Debug\netcoreapp2.0\BLL.dll
 F:\Projects\Wasalee\WasalLeeAPI\BLL\obj\Debug\netcoreapp2.0\BLL.pdb
-F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\Component.dll
-F:\Projects\Wasalee\WasalLeeAPI\BLL\bin\Debug\netcoreapp2.0\Component.pdb

@@ -13,7 +13,7 @@ namespace DAL
 
         public string Name { get; set; }
 
-        public string Description { get; set; }
+        public string ItemDescription { get; set; }
 
         public string PickUpLocation { get; set; }
 

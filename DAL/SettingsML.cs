@@ -15,6 +15,8 @@ namespace DAL
 
         public string TermsOfUse { get; set; }
 
+        public string Currency { get; set; }
+
         public CultureType Culture { get; set; }
 
         public int Setting_Id { get; set; }

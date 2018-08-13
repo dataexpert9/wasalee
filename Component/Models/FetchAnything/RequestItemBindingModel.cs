@@ -14,7 +14,7 @@ namespace Wasalee.BindingModels.FetchAnything
 
         public double PriceRangeTo  { get; set; }
 
-        public string Description { get; set; }
+        public string ItemDescription { get; set; }
 
         public DateTime DeliveryDate { get; set; }
 
@@ -29,6 +29,10 @@ namespace Wasalee.BindingModels.FetchAnything
         public double? PickUpLongitude { get; set; }
 
         public string DropOffLocation { get; set; }
+
+        public double? DropOffLatitude { get; set; }
+
+        public double? DropOffLongitude { get; set; }
 
         public List<string> ItemImages { get; set; }
 

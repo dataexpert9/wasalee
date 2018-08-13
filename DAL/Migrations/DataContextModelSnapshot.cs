@@ -19,6 +19,27 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("DAL.CancelItemReason", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CancelAt");
+
+                    b.Property<int?>("ReportProblemMessage_Id");
+
+                    b.Property<int>("RequestItem_Id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReportProblemMessage_Id");
+
+                    b.HasIndex("RequestItem_Id");
+
+                    b.ToTable("CancelItemReason");
+                });
+
             modelBuilder.Entity("DAL.Cuisine", b =>
                 {
                     b.Property<int>("Id")
@@ -40,11 +61,17 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BriefInfo");
+
                     b.Property<DateTime>("CreatedDate");
 
                     b.Property<string>("DateOfBirth");
 
                     b.Property<string>("Email");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<string>("HomeAddress");
 
                     b.Property<bool>("IsAvailable");
 
@@ -64,36 +91,15 @@ namespace DAL.Migrations
 
                     b.Property<string>("PhoneNo");
 
+                    b.Property<string>("ProfilePictureUrl");
+
                     b.Property<int>("SignInType");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Drivers");
-                });
-
-            modelBuilder.Entity("DAL.DriverML", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("BriefInfo");
-
-                    b.Property<int>("Culture");
-
-                    b.Property<int>("Driver_Id");
-
-                    b.Property<string>("FullName");
-
-                    b.Property<string>("HomeAddress");
 
                     b.Property<string>("WorkHistory");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Driver_Id");
-
-                    b.ToTable("DriverML");
+                    b.ToTable("Drivers");
                 });
 
             modelBuilder.Entity("DAL.DriverRating", b =>
@@ -104,17 +110,25 @@ namespace DAL.Migrations
 
                     b.Property<int>("Driver_Id");
 
+                    b.Property<DateTime>("RatedAt");
+
                     b.Property<double>("Rating");
 
                     b.Property<string>("Reason");
 
                     b.Property<int?>("ReportProblemMessage_Id");
 
+                    b.Property<int>("Type");
+
+                    b.Property<int?>("User_Id");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Driver_Id");
 
                     b.HasIndex("ReportProblemMessage_Id");
+
+                    b.HasIndex("User_Id");
 
                     b.ToTable("DriverRating");
                 });
@@ -125,9 +139,13 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Culture");
+
                     b.Property<bool>("IsDeleted");
 
                     b.Property<string>("Reason");
+
+                    b.Property<int>("Type");
 
                     b.HasKey("Id");
 
@@ -146,13 +164,21 @@ namespace DAL.Migrations
 
                     b.Property<int?>("Driver_Id");
 
+                    b.Property<double?>("DropOffLatitude");
+
+                    b.Property<double?>("DropOffLongitude");
+
                     b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("ItemDescription");
 
                     b.Property<int>("PaymentMethod");
 
                     b.Property<double?>("PickUpLatitude");
 
                     b.Property<double?>("PickUpLongitude");
+
+                    b.Property<double?>("Price");
 
                     b.Property<double>("PriceRangeFrom");
 
@@ -198,9 +224,9 @@ namespace DAL.Migrations
 
                     b.Property<int>("Culture");
 
-                    b.Property<string>("Description");
-
                     b.Property<string>("DropOffLocation");
+
+                    b.Property<string>("ItemDescription");
 
                     b.Property<string>("Name");
 
@@ -237,6 +263,8 @@ namespace DAL.Migrations
                     b.Property<string>("AboutUs");
 
                     b.Property<int>("Culture");
+
+                    b.Property<string>("Currency");
 
                     b.Property<string>("PrivacyPolicy");
 
@@ -379,7 +407,11 @@ namespace DAL.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("FullName");
+
                     b.Property<bool>("IsNotificationsOn");
+
+                    b.Property<string>("Location");
 
                     b.Property<DateTime?>("ModifiedDate");
 
@@ -429,32 +461,15 @@ namespace DAL.Migrations
                     b.ToTable("UserDevice");
                 });
 
-            modelBuilder.Entity("DAL.UserML", b =>
+            modelBuilder.Entity("DAL.CancelItemReason", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.HasOne("DAL.ReportProblemMessage", "ReportProblemMessage")
+                        .WithMany()
+                        .HasForeignKey("ReportProblemMessage_Id");
 
-                    b.Property<int>("Culture");
-
-                    b.Property<string>("FullName");
-
-                    b.Property<string>("Location");
-
-                    b.Property<int>("User_Id");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("User_Id");
-
-                    b.ToTable("UserML");
-                });
-
-            modelBuilder.Entity("DAL.DriverML", b =>
-                {
-                    b.HasOne("DAL.Driver", "Driver")
-                        .WithMany("DriverML")
-                        .HasForeignKey("Driver_Id")
+                    b.HasOne("DAL.RequestItem", "RequestItem")
+                        .WithMany()
+                        .HasForeignKey("RequestItem_Id")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -468,6 +483,11 @@ namespace DAL.Migrations
                     b.HasOne("DAL.ReportProblemMessage", "ReportProblemMessage")
                         .WithMany()
                         .HasForeignKey("ReportProblemMessage_Id");
+
+                    b.HasOne("DAL.User", "User")
+                        .WithMany("DriverRating")
+                        .HasForeignKey("User_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DAL.RequestItem", b =>
@@ -562,14 +582,6 @@ namespace DAL.Migrations
                     b.HasOne("DAL.User", "User")
                         .WithMany("UserDevices")
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("DAL.UserML", b =>
-                {
-                    b.HasOne("DAL.User", "User")
-                        .WithMany("UserML")
-                        .HasForeignKey("User_Id")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

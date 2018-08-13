@@ -56,5 +56,7 @@ namespace Wasalee.DTOs
         public string AboutUs { get; set; }
         public string PrivacyPolicy { get; set; }
         public string TermsOfUse { get; set; }
+        public string Currency { get; set; }
+
     }
 }

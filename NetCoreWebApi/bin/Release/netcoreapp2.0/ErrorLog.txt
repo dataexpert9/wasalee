@@ -1,0 +1,100 @@
+DateTime : 8/13/2018 8:58:06 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[DAL.DriverRating, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Wasalee.DTOs.DriverRatingDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+StackTrace   at lambda_method(Closure , List`1 , List`1 , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverRatings(Int32 Driver_Id, Nullable`1 Items, Nullable`1 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 450
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+DriverRating -> DriverRatingDTO (Destination member list)
+DAL.DriverRating -> Wasalee.DTOs.DriverRatingDTO (Destination member list)
+
+Unmapped properties:
+CreatedDate
+
+------******------
+DateTime : 8/13/2018 8:58:49 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[DAL.DriverRating, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Wasalee.DTOs.DriverRatingDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+StackTrace   at lambda_method(Closure , List`1 , List`1 , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverRatings(Int32 Driver_Id, Nullable`1 Items, Nullable`1 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 449
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+DriverRating -> DriverRatingDTO (Destination member list)
+DAL.DriverRating -> Wasalee.DTOs.DriverRatingDTO (Destination member list)
+
+Unmapped properties:
+CreatedDate
+
+------******------
+DateTime : 8/13/2018 8:58:59 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[DAL.DriverRating, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Wasalee.DTOs.DriverRatingDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+StackTrace   at lambda_method(Closure , List`1 , List`1 , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverRatings(Int32 Driver_Id, Nullable`1 Items, Nullable`1 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 449
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+DriverRating -> DriverRatingDTO (Destination member list)
+DAL.DriverRating -> Wasalee.DTOs.DriverRatingDTO (Destination member list)
+
+Unmapped properties:
+CreatedDate
+
+------******------
+DateTime : 8/13/2018 8:59:00 AM
+
+
+MessageError mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[DAL.DriverRating, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[Wasalee.DTOs.DriverRatingDTO, Wasalee, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+StackTrace   at lambda_method(Closure , List`1 , List`1 , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverRatings(Int32 Driver_Id, Nullable`1 Items, Nullable`1 Page) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 449
+
+Inner Exception : 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=================================================
+AutoMapper created this type map for you, but your types cannot be mapped using the current configuration.
+DriverRating -> DriverRatingDTO (Destination member list)
+DAL.DriverRating -> Wasalee.DTOs.DriverRatingDTO (Destination member list)
+
+Unmapped properties:
+CreatedDate
+
+------******------

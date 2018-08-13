@@ -58,7 +58,7 @@ namespace Wasalee.Controllers
                 if (driver != null)
                 {
                     var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
-                    driverDTO = Mapper.Map(driver.DriverML.FirstOrDefault(x => x.Culture == culture), driverDTO);
+                    //driverDTO = Mapper.Map(driver.DriverML.FirstOrDefault(x => x.Culture == culture), driverDTO);
                     driverDTO.GenerateToken(_configuration);
                     return Ok(new CustomResponse<DriverDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = driverDTO });
                 }
@@ -88,7 +88,7 @@ namespace Wasalee.Controllers
                 {
                     //var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
                     var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
-                    driverDTO = Mapper.Map(driver.DriverML.FirstOrDefault(x => x.Culture == culture), driverDTO);
+                    //driverDTO = Mapper.Map(driver.DriverML.FirstOrDefault(x => x.Culture == culture), driverDTO);
                     driverDTO.GenerateToken(_configuration);
                     return Ok(new CustomResponse<DriverDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = driverDTO });
                 }
@@ -135,6 +135,8 @@ namespace Wasalee.Controllers
                         for (int i = 0; i < AllRequests.Count; i++)
                         {
                             Mapper.Map(AllRequests[i].RequestItemML.FirstOrDefault(y => y.Culture == culture), pendingRequest.Pending[i]);
+                            //Mapper.Map(AllRequests[i].Driver.DriverML.FirstOrDefault(y => y.Culture == culture), historyRequest.History[i].Driver);
+
                         }
                     }
                     else
@@ -151,6 +153,8 @@ namespace Wasalee.Controllers
                         for (int i = 0; i < CompletedRequests.Count; i++)
                         {
                             Mapper.Map(CompletedRequests[i].RequestItemML.FirstOrDefault(y => y.Culture == culture), historyRequest.History[i]);
+                            //Mapper.Map(CompletedRequests[i].Driver.DriverML.FirstOrDefault(y => y.Culture == culture), historyRequest.History[i].Driver);
+
                         }
                     }
                     else
@@ -204,16 +208,19 @@ namespace Wasalee.Controllers
 
                 RequestItemViewModel returnModel = new RequestItemViewModel();
                 int Driver_Id = Convert.ToInt32(User.GetClaimValue("Id"));
+                CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
+
+
 
                 var response = _bODriver.AcceptRequest(Driver_Id, Request_Id);
                 if (response != null)
                 {
                     returnModel.Request = Mapper.Map<RequestItem, RequestItemDTO>(response);
-                    Mapper.Map(response.RequestItemML.FirstOrDefault(x => x.Culture == CultureHelper.Culture), returnModel.Request);
+                    Mapper.Map(response.RequestItemML.FirstOrDefault(x => x.Culture == culture), returnModel.Request);
                     return Ok(new CustomResponse<RequestItemViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = returnModel });
                 }
                 else
-                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Forbidden, StatusCode = StatusCodes.Status403Forbidden, Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateInvalid("request id") } });
+                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Forbidden, StatusCode = StatusCodes.Status403Forbidden, Result = new Error { ErrorMessage = "Request already assigned." } });
             }
             catch (Exception ex)
             {
@@ -325,12 +332,38 @@ namespace Wasalee.Controllers
                 if (Driver != null)
                 {
                     driverProfile = Mapper.Map<Driver, DriverDTO>(Driver);
-                    Mapper.Map(Driver.DriverML.FirstOrDefault(x => x.Culture == CultureHelper.Culture), driverProfile);
+                    //Mapper.Map(Driver.DriverML.FirstOrDefault(x => x.Culture == CultureHelper.Culture), driverProfile);
                     return Ok(new CustomResponse<DriverDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = driverProfile });
                 }
                 else
                     return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Forbidden, StatusCode = StatusCodes.Status403Forbidden, Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateNotFound("Driver") } });
 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Error.LogError(ex));
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("GetDriverDetailsById")]
+        public IActionResult GetDriverDetailsById(int Driver_Id)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
+
+                DriverDetailsViewModel responseModel = new DriverDetailsViewModel();
+
+
+                var DriverDetails = _bODriver.GetDriverDetailsById(Driver_Id, culture);
+                responseModel.Driver = Mapper.Map<Driver, DriverDTO>(DriverDetails);
+                
+                return Ok(new CustomResponse<DriverDetailsViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = responseModel });
             }
             catch (Exception ex)
             {
@@ -347,22 +380,21 @@ namespace Wasalee.Controllers
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
-                //var driver = _bODriver.AuthenticateCredentials(model.username, CryptoHelper.Hash(model.password));
-                int Driver_Id = Convert.ToInt32(User.GetClaimValue("Id"));
+                model.User_Id = Convert.ToInt32(User.GetClaimValue("Id"));
                 CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
-                //var response = CancelBooking(Driver_Id, Request_Id);
-                //var status = _bODriver.RateDriver(model,culture);
+                DriverRatingViewModel response = new DriverRatingViewModel();
 
+                var rateObj = _bODriver.RateDriver(model, culture);
 
+                if (rateObj != null)
+                {
+                    response.Rating = Mapper.Map<DriverRating, DriverRatingDTO>(rateObj);
 
+                    return Ok(new CustomResponse<DriverRatingViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = response });
+                }
+                else
+                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Forbidden, StatusCode = StatusCodes.Status403Forbidden, Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateNotFound("Driver") } });
 
-                return Ok(new CustomResponse<Error>
-                    {
-                        Message = Global.ResponseMessages.Forbidden,
-                        StatusCode = StatusCodes.Status403Forbidden,
-                        Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateInvalid("email or password") }
-                    });
-               
             }
             catch (Exception ex)
             {
@@ -370,6 +402,101 @@ namespace Wasalee.Controllers
             }
         }
 
+        [Route("ReportProblem")]
+        [HttpPost]
+        public async Task<IActionResult> ReportProblem(ReportProblemBindingModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                model.User_Id = Convert.ToInt32(User.GetClaimValue("Id"));
+                CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
+
+                //DriverRatingViewModel response = new DriverRatingViewModel();
+
+                var rateObj = _bODriver.ReportProblem(model);
+
+                if (rateObj)
+                {
+                    //response.Rating = Mapper.Map<DriverRating, DriverRatingDTO>(rateObj);
+                    return Ok(new CustomResponse<string> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = "Problem reported successfully."});
+                }
+                else
+                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Forbidden, StatusCode = StatusCodes.Status403Forbidden, Result = new Error { ErrorMessage = "Something went wrong! Try again." } });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Error.LogError(ex));
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("GetDriverRatings")]
+        public IActionResult GetDriverRatings(int Driver_Id,int? Items=3,int? Page=0)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                DriversRatingsViewModel responseModel = new DriversRatingsViewModel();
+
+
+                var DriverRatings = _bODriver.GetDriverRatings(Driver_Id,Items,Page);
+                responseModel.Ratings = Mapper.Map<List<DriverRating>, List<DriverRatingDTO>>(DriverRatings);
+                responseModel.TotalRecords= _bODriver.GetTotalRatingsOfDriver(Driver_Id);
+
+                return Ok(new CustomResponse<DriversRatingsViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = responseModel });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Error.LogError(ex));
+            }
+        }
+
+        //[Route("CancelOrder")]
+        //[HttpPost]
+        //public async Task<IActionResult> CancelOrder(CancelRequestBindingModel model)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //            return BadRequest(ModelState);
+
+        //        model.Driver_Id = Convert.ToInt32(User.GetClaimValue("Id"));
+        //        CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
+        //        //var response = CancelBooking(Driver_Id, Request_Id);
+        //        var status = _bODriver.RateDriver(model, culture);
+
+        //        if (status != null)
+        //        {
+        //            return Ok(new CustomResponse<string> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = "Review submitted successfully" });
+
+        //        }
+        //        else
+        //        {
+        //            return Ok(new CustomResponse<Error>
+        //            {
+        //                Message = Global.ResponseMessages.Forbidden,
+        //                StatusCode = StatusCodes.Status403Forbidden,
+        //                Result = new Error { ErrorMessage = "Something went wrong! Try again." }
+        //            });
+        //        }
+
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(Error.LogError(ex));
+        //    }
+        //}
 
     }
 }

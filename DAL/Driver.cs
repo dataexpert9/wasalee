@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DAL
@@ -18,9 +19,14 @@ namespace DAL
         public bool IsAvailable { get; set; }
         public int SignInType { get; set; }
         public string Email { get; set; }
-        public virtual List<DriverML> DriverML { get; set; }
+        public string ProfilePictureUrl { get; set; }
+        public string FullName { get; set; }
+        public string HomeAddress { get; set; }
+        public string BriefInfo { get; set; }
+        public string WorkHistory { get; set; }
+        [NotMapped]
+        public double AverageRating { get; set; }
         public virtual List<RequestItem> RequestItem { get; set; }
-
         [JsonIgnore]
         public virtual List<DriverRating> DriverRating { get; set; }
 

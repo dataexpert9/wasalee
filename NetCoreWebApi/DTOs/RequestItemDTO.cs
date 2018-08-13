@@ -56,11 +56,13 @@ namespace Wasalee.DTOs
 
         public int Quantity { get; set; }
 
+        public double? Price { get; set; }
+
         public double PriceRangeFrom { get; set; }
 
         public double PriceRangeTo { get; set; }
 
-        public string Description { get; set; }
+        public string ItemDescription { get; set; }
 
         public DateTime DeliveryDate { get; set; }
 
@@ -72,12 +74,22 @@ namespace Wasalee.DTOs
 
         public bool IsDeleted { get; set; }
 
+        public string PickUpLocation { get; set; }
+
         public double? PickUpLatitude { get; set; }
 
         public double? PickUpLongitude { get; set; }
 
+        public string DropOffLocation { get; set; }
+
+        public double? DropOffLatitude { get; set; }
+
+        public double? DropOffLongitude { get; set; }
+
         public int User_Id { get; set; }
-        
+
+        public bool IsUserRated { get; set; }
+
         public List<RequestItemImagesDTO> RequestItemImages { get; set; }
 
         public UserDTO User { get; set; }

@@ -12,9 +12,7 @@ namespace DAL
         [JsonIgnore]
         public int Id { get; set; }
 
-        public string FullName { get; set; }
-
-        public string Location { get; set; }
+      
 
         public CultureType Culture { get; set; }
 

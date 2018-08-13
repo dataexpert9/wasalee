@@ -118,12 +118,14 @@ namespace NetCoreWebApi
             cfg.CreateMap<List<Cuisine>, List<CuisineDTO>>();
             cfg.CreateMap<Driver, DriverDTO>();
             cfg.CreateMap<RequestItem, RequestItemDTO>();
-            cfg.CreateMap<UserML, UserDTO>()
-            .ForMember(
-             dest => dest.Id,
-             opts => opts.MapFrom(src => src.User_Id)
-             )
-             .ReverseMap();
+            cfg.CreateMap<DriverRating, DriverRatingDTO>();
+
+            //cfg.CreateMap<UserML, UserDTO>()
+            //.ForMember(
+            // dest => dest.Id,
+            // opts => opts.MapFrom(src => src.User_Id)
+            // )
+            // .ReverseMap();
 
             cfg.CreateMap<RequestItemML, RequestItemDTO>().ForMember(
              dest => dest.Id,
@@ -131,12 +133,12 @@ namespace NetCoreWebApi
              )
              .ReverseMap();
 
-            cfg.CreateMap<DriverML, DriverDTO>()
-                    .ForMember(
-                     dest => dest.Id,
-                     opts => opts.MapFrom(src => src.Driver_Id)
-                     )
-                     .ReverseMap();
+            //cfg.CreateMap<DriverML, DriverDTO>()
+            //        .ForMember(
+            //         dest => dest.Id,
+            //         opts => opts.MapFrom(src => src.Driver_Id)
+            //         )
+            //         .ReverseMap();
 
 
             //cfg.CreateMap<RequestItem,RequestItemDTO>()

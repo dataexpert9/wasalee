@@ -10,4 +10,5 @@ namespace Wasalee.Utility
         User,
         Driver
     }
+
 }

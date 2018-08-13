@@ -50,17 +50,9 @@ namespace BLL.Implementation
                     SignInType = 0,
                     CreatedDate = DateTime.UtcNow,
                     Status = Convert.ToInt16(Component.Utility.Enums.UserStatus.Inactive),
-                };
-
-                if (NewUser.UserML == null)
-                    NewUser.UserML = new List<UserML>();
-
-                NewUser.UserML.Add(new UserML
-                {
                     Location = user.Location,
-                    FullName = user.FullName,
-                    Culture = culture
-                });
+                    FullName = user.FullName
+                };
 
                 _dbContext.Users.Add(NewUser);
                 _dbContext.SaveChanges();
@@ -78,7 +70,7 @@ namespace BLL.Implementation
         {
             try
             {
-                var user = _dbContext.Users.Include(y=>y.UserML).FirstOrDefault(x => x.Email == username && x.Password == password);
+                var user = _dbContext.Users.FirstOrDefault(x => x.Email == username && x.Password == password);
                 //BLLSettings sett = new BLLSettings();
                 if (user != null)
                 {

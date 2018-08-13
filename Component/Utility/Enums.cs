@@ -36,5 +36,9 @@
         English = 1,
         Arabic = 2
     }
-
+    public enum RatingTypes
+    {
+        ReportProblem=0,
+        RateDriver=1
+    }
 }

@@ -15,12 +15,15 @@ namespace DAL
         }
 
         public int Id { get; set; }
-        
+
         //public string FirstName { get; set; }
-        
+
         //public string LastName { get; set; }
-        
+
         //public string FullName { get; set; }
+        public string FullName { get; set; }
+
+        public string Location { get; set; }
 
         public string ProfilePictureUrl { get; set; }
 
@@ -57,7 +60,8 @@ namespace DAL
 
         public virtual ICollection<RequestItem> RequestItem { get; set; }
 
-        public virtual ICollection<UserML> UserML { get; set; }
+        public virtual ICollection<DriverRating> DriverRating { get; set; }
+
 
         //public string Location { get; set; }
 

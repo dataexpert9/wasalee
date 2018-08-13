@@ -32,7 +32,7 @@ namespace BLL.Implementation
             }
         }
 
-        public Driver InsertDriver(RegisterDriverBindingModel model,CultureType culture)
+        public Driver InsertDriver(RegisterDriverBindingModel model, CultureType culture)
         {
             try
             {
@@ -46,27 +46,19 @@ namespace BLL.Implementation
                     IsNotificationsOn = true,
                     SignInType = (int)UserTypes.Driver,
                     CreatedDate = DateTime.UtcNow,
-                    IsAvailable = true
+                    IsAvailable = true,
+                    BriefInfo = model.BriefIntro,
+                    FullName = model.FullName,
+                    HomeAddress = model.HomeAddress,
+                    WorkHistory = model.WorkHistory
                 };
-
-                if (driver.DriverML == null)
-                    driver.DriverML = new List<DriverML>();
-
-                driver.DriverML.Add(new DriverML {
-                    BriefInfo=model.BriefIntro,
-                    Culture=culture,
-                    FullName=model.FullName,
-                    HomeAddress=model.HomeAddress,
-                    WorkHistory=model.WorkHistory
-                });
-
 
                 _dbContext.Drivers.Add(driver);
                 _dbContext.SaveChanges();
 
                 return driver;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw;
             }
@@ -76,7 +68,7 @@ namespace BLL.Implementation
         {
             try
             {
-                return _dbContext.Drivers.Include(x=>x.DriverML).FirstOrDefault(x => x.Email == username && x.Password == password);
+                return _dbContext.Drivers.FirstOrDefault(x => x.Email == username && x.Password == password);
             }
             catch (Exception)
             {
@@ -84,21 +76,21 @@ namespace BLL.Implementation
             }
         }
 
-        public List<RequestItem> GetAllRequests(int Items,int Page)
+        public List<RequestItem> GetAllRequests(int Items, int Page)
         {
-            return _dbContext.RequestItem.Include(x=>x.RequestItemML).Include(x => x.RequestItemImages).Where(x => x.Status == (int)RequestItemStatus.Requested && x.IsDeleted==false).Skip(Items*Page).Take(Items).OrderBy(x=>x.Id).ToList();
+            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x => x.Driver).Where(x => x.Status == (int)RequestItemStatus.Requested && x.IsDeleted == false).Skip(Items * Page).Take(Items).OrderBy(x => x.Id).ToList();
         }
 
-        public List<RequestItem> GetRiderRequests(int Driver_Id,int Items, int Page)
+        public List<RequestItem> GetRiderRequests(int Driver_Id, int Items, int Page)
         {
-            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Where(x => (x.Status == (int)RequestItemStatus.Completed || x.Status == (int)RequestItemStatus.Delivered) && x.IsDeleted == false && x.Driver_Id==Driver_Id).Skip(Items * Page).Take(Items).OrderBy(x => x.Id).ToList();
+            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x => x.Driver).Where(x => (x.Status == (int)RequestItemStatus.Completed || x.Status == (int)RequestItemStatus.Delivered) && x.IsDeleted == false && x.Driver_Id == Driver_Id).Skip(Items * Page).Take(Items).OrderBy(x => x.Id).ToList();
         }
 
         public bool CancelBooking(int Driver_Id, int Request_Id)
         {
             //  pending request is when rider will accept request but didnt delivered
             // requested is when user submit his/her request but not yet accepted by rider
-            var item=_dbContext.RequestItem.FirstOrDefault(x => x.Id == Request_Id && x.Status == (int)RequestItemStatus.Pending && x.IsDeleted==false);
+            var item = _dbContext.RequestItem.FirstOrDefault(x => x.Id == Request_Id && x.Status == (int)RequestItemStatus.Pending && x.IsDeleted == false);
             if (item != null)
             {
                 item.Status = (int)RequestItemStatus.Cancelled;
@@ -109,14 +101,17 @@ namespace BLL.Implementation
                 return false;
         }
 
-        public RequestItem AcceptRequest(int Driver_Id,int Request_Id)
+        public RequestItem AcceptRequest(int Driver_Id, int Request_Id)
         {
-            var Request = _dbContext.RequestItem.Include(x=>x.RequestItemML).Include(x=>x.RequestItemImages).FirstOrDefault(x => x.Id == Request_Id && x.Status==(int)RequestItemStatus.Pending);
-
+            var Request = _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.Driver).Include(x => x.RequestItemImages).FirstOrDefault(x => x.Id == Request_Id && x.Status == (int)RequestItemStatus.Pending);
+            if (Request.Driver_Id.HasValue && Request.Driver_Id != null)
+            {
+                return null;
+            }
             if (Request != null)
             {
                 Request.Driver_Id = Driver_Id;
-                Request.Status=(int)RequestItemStatus.Pending;
+                Request.Status = (int)RequestItemStatus.Pending;
                 _dbContext.SaveChanges();
                 return Request;
             }
@@ -124,7 +119,7 @@ namespace BLL.Implementation
                 return null;
         }
 
-        public Driver UpdateAvailabilityStatus(int Driver_Id,bool IsAvailable)
+        public Driver UpdateAvailabilityStatus(int Driver_Id, bool IsAvailable)
         {
             var Driver = _dbContext.Drivers.FirstOrDefault(x => x.Id == Driver_Id);
 
@@ -155,9 +150,9 @@ namespace BLL.Implementation
         public bool ChangeDriverPassword(int Driver_Id, string Password, string NewPassword)
         {
 
-            var Driver=_dbContext.Drivers.FirstOrDefault(x=>x.Id==Driver_Id);
+            var Driver = _dbContext.Drivers.FirstOrDefault(x => x.Id == Driver_Id);
 
-            var hashPass=CryptoHelper.Hash(Password);
+            var hashPass = CryptoHelper.Hash(Password);
             var NewhashPass = CryptoHelper.Hash(NewPassword);
 
             if (Driver.Password == hashPass)
@@ -174,27 +169,71 @@ namespace BLL.Implementation
 
         public Driver GetDriverProfile(int Driver_Id)
         {
-            var Driver=_dbContext.Drivers.Include(x=>x.DriverML).FirstOrDefault(x => x.Id == Driver_Id);
+            var Driver = _dbContext.Drivers.FirstOrDefault(x => x.Id == Driver_Id);
             if (Driver != null)
                 return Driver;
             else
                 return null;
         }
 
-        //bool RateDriver(RateDriverBindingModel model, CultureType culture)
-        //{
+        public DriverRating RateDriver(RateDriverBindingModel model, CultureType culture)
+        {
 
-        //    var rating = _dbContext.DriverRating.Add(new DriverRating
-        //    {
-        //        Driver_Id=model.Driver_Id,
-        //        Rating=model.Rating,
-        //        Reason=model.Reason,
-        //        ReportProblemMessage_Id=model.ReportProblemMessage_Id
-        //    });
-        //    _dbContext.SaveChanges();
+            try
+            {
+                var rating = _dbContext.DriverRating.Add(new DriverRating
+                {
+                    Driver_Id = model.Driver_Id,
+                    Rating = model.Rating,
+                    Reason = model.Reason,
+                    RatedAt = DateTime.UtcNow,
+                    User_Id = model.User_Id,
+                    Type = (int)RatingTypes.RateDriver
+                });
 
-        //    return true;
-        //}
+                var Request = _dbContext.RequestItem.FirstOrDefault(x => x.Id == model.Request_Id);
+                if (Request != null)
+                    Request.IsUserRated = true;
+
+                _dbContext.SaveChanges();
+                return _dbContext.DriverRating.FirstOrDefault(x => x.Id == rating.Entity.Id);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public Driver GetDriverDetailsById(int Driver_Id, CultureType culture)
+        {
+            return _dbContext.Drivers.Include(a => a.DriverRating).Include("DriverRating.User").FirstOrDefault(x => x.Id == Driver_Id);
+        }
+
+        public bool ReportProblem(ReportProblemBindingModel model)
+        {
+            var rating = _dbContext.DriverRating.Add(new DriverRating
+            {
+                Driver_Id = model.Driver_Id,
+                RatedAt = DateTime.UtcNow,
+                User_Id = model.User_Id,
+                Type = (int)RatingTypes.ReportProblem,
+                ReportProblemMessage_Id = model.ReportProblemMessage_Id
+            });
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+        public List<DriverRating> GetDriverRatings(int Driver_Id, int? Items = 3, int? Page = 0)
+        {
+            return _dbContext.DriverRating.Include(x => x.User).Where(x => x.Driver_Id == Driver_Id && x.Type == (int)RatingTypes.RateDriver).Skip(Items.Value * Page.Value).Take(Items.Value).OrderBy(x => x.Id).ToList();
+        }
+        public int GetTotalRatingsOfDriver(int Driver_Id)
+        {
+            return _dbContext.DriverRating.Count(x => x.Driver_Id == Driver_Id && x.Type == (int)RatingTypes.RateDriver);
+        }
+
+
 
     }
 }

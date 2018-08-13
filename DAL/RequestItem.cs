@@ -12,6 +12,8 @@ namespace DAL
 
         public double PriceRangeFrom { get; set; }
 
+        public string ItemDescription { get; set; }
+
         public double PriceRangeTo { get; set; }
 
         public DateTime DeliveryDate { get; set; }
@@ -24,9 +26,17 @@ namespace DAL
 
         public bool IsDeleted { get; set; }
 
+        public double? Price { get; set; }
+
         public double? PickUpLatitude { get; set; }
 
         public double? PickUpLongitude { get; set; }
+        
+        public double? DropOffLatitude { get; set; }
+
+        public double? DropOffLongitude { get; set; }
+
+        public bool IsUserRated { get; set; }
 
         public int User_Id { get; set; }
 

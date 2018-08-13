@@ -8,7 +8,7 @@ namespace DAL
             : base(options) { }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<UserML> UserML { get; set; }
+
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Settings> Settings { get; set; }
         public DbSet<Store> Store { get; set; }
@@ -21,13 +21,20 @@ namespace DAL
         public DbSet<RequestItemImages> RequestItemImages { get; set; }
         public DbSet<RequestItemML> RequestItemML { get; set; }
         public DbSet<SettingsML> SettingsML { get; set; }
-        public DbSet<DriverML> DriverML { get; set; }
+
         public DbSet<DriverRating> DriverRating { get; set; }
         public DbSet<ReportProblemMessage> ReportProblemMessage { get; set; }
+        public DbSet<CancelItemReason> CancelItemReason { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .HasMany(a => a.DriverRating)
+                .WithOne(e => e.User)
+                .HasForeignKey(x => x.User_Id)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Driver>()
                 .HasMany(a => a.DriverRating)
@@ -36,12 +43,7 @@ namespace DAL
                 .HasForeignKey(x => x.Driver_Id)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Driver>()
-                .HasMany(a => a.DriverML)
-                .WithOne(e => e.Driver)
-                .IsRequired()
-                .HasForeignKey(x => x.Driver_Id)
-                .OnDelete(DeleteBehavior.Cascade);
+
 
             modelBuilder.Entity<Settings>()
                 .HasMany(a => a.SettingsML)
@@ -61,13 +63,6 @@ namespace DAL
                 .HasMany(a => a.RequestItem)
                 .WithOne(e => e.Driver)
                 .HasForeignKey(x => x.Driver_Id)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<User>()
-                .HasMany(a => a.UserML)
-                .WithOne(e => e.User)
-                .IsRequired()
-                .HasForeignKey(x => x.User_Id)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<User>()

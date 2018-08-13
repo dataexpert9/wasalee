@@ -48,16 +48,18 @@ namespace Wasalee.Controllers
 
                 model.User_Id = Convert.ToInt32(User.GetClaimValue("Id"));
                 CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
-
+                RequestItemDTO resp = new RequestItemDTO();
 
                 var requestItem = _bOFetch.RequestItem(model, culture);
-
-                var response = Mapper.Map<RequestItem, RequestItemDTO>(requestItem);
-                Mapper.Map(requestItem.RequestItemML.FirstOrDefault(x => x.Culture == CultureHelper.Culture), response);
-
-
                 if (requestItem != null)
+                {
+                    var response = Mapper.Map<RequestItem, RequestItemDTO>(requestItem);
+                    //Mapper.Map(requestItem.RequestItemML.FirstOrDefault(x => x.Culture == CultureHelper.Culture), response);
+                    //Mapper.Map(response, resp);
+                    Mapper.Map(requestItem.RequestItemML.FirstOrDefault(x => x.Culture == culture), response);
+
                     return Ok(new CustomResponse<RequestItemDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = response });
+                }
                 else
                     return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Conflict, StatusCode = StatusCodes.Status409Conflict, Result = new Error { ErrorMessage = "Something went wrong! Try again." } });
             }
@@ -95,6 +97,9 @@ namespace Wasalee.Controllers
                         for (int i = 0; i < PendingRequestItems.Count; i++)
                         {
                             Mapper.Map(PendingRequestItems[i].RequestItemML.FirstOrDefault(y => y.Culture == culture), pendingResponse.Pending[i]);
+                            //if (PendingRequestItems[i].Driver != null)
+                            //    Mapper.Map(PendingRequestItems[i].Driver.DriverML.FirstOrDefault(y => y.Culture == culture), pendingResponse.Pending[i].Driver);
+
                         }
                     }
                     else
@@ -113,6 +118,8 @@ namespace Wasalee.Controllers
                         for (int i = 0; i < DeliveredOrCompletedRequestItems.Count; i++)
                         {
                             Mapper.Map(DeliveredOrCompletedRequestItems[i].RequestItemML.FirstOrDefault(y => y.Culture == culture), historyResponse.History[i]);
+                            //Mapper.Map(DeliveredOrCompletedRequestItems[i].Driver.DriverML.FirstOrDefault(y => y.Culture == culture), historyResponse.History[i].Driver);
+
                         }
                     }
                     else
