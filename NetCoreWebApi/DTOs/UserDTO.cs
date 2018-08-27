@@ -10,6 +10,10 @@ namespace Wasalee.DTOs
 {
     public class UserDTO
     {
+        public UserDTO()
+        {
+            //FullName = FullName.Substring(0, 1).ToUpper() + FullName.Substring(1, FullName.Length).ToUpper();
+        }
         public int Id { get; set; }
 
         public string FirstName { get; set; }
@@ -53,9 +57,13 @@ namespace Wasalee.DTOs
     public class SettingDTO
     {
         public int Id { get; set; }
+
         public string AboutUs { get; set; }
+
         public string PrivacyPolicy { get; set; }
+
         public string TermsOfUse { get; set; }
+
         public string Currency { get; set; }
 
     }

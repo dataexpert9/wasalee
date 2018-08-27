@@ -21,6 +21,8 @@ namespace Component.Models.Driver
     }
     public class ReportProblemBindingModel
     {
+        public int Request_Id { get; set; }
+
         public int User_Id { get; set; }
 
         public int Driver_Id { get; set; }

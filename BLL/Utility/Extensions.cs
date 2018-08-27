@@ -1,4 +1,5 @@
 ﻿using Component.ResponseFormats;
+using Component.Utility.Enums;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,24 @@ namespace BLL.Utility
             }
         }
 
+        public static void CalculateDriverAverageRating(this Driver driver)
+        {
+            try
+            {
+                if (driver.DriverRating.Count > 0)
+                    driver.AverageRating = Convert.ToDouble(driver.DriverRating.Where(x=>x.Type==(int)RatingTypes.RateDriver).Average(x => x.Rating).ToString("F2"));
 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //public static void GetDriverAverageRating(this Driver driver)
+        //{
+        //    if (driver.DriverRating.Count > 0)
+        //        driver.AverageRating = Convert.ToDouble(driver.DriverRating.Average(x => x.Rating).ToString("F2"));
+        //}
     }
 }

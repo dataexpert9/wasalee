@@ -62,7 +62,6 @@ namespace DAL
 
         public virtual ICollection<DriverRating> DriverRating { get; set; }
 
-
         //public string Location { get; set; }
 
         [NotMapped]

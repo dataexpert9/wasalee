@@ -15,5 +15,7 @@ namespace BLL.Interface
         List<RequestItem> GetDeliveredOrCompletedRequests(int User_Id, int Items, int Page, CultureType culture);
         RequestItem GetRequestById(int Request_Id,CultureType culture);
         double GetDistance();
+        double GetDriverRatingOnly(int Driver_Id);
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Component.Utility;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace Wasalee.Utility
             var claim = identity.Claims.FirstOrDefault(c => c.Type == key);
             return claim?.Value;
         }
+
     }
 
    

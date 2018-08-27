@@ -24,7 +24,7 @@ namespace BLL.Implementation
         public RequestItem RequestItem(RequestItemBindingModel model, CultureType culture)
         {
 
-            var Order_Id= Guid.NewGuid().ToString().Substring(0, 6);
+            var Order_Id = Guid.NewGuid().ToString().Substring(0, 6);
 
             var RequestItem = new RequestItem
             {
@@ -41,8 +41,9 @@ namespace BLL.Implementation
                 DropOffLongitude = model.DropOffLongitude,
                 PickUpLatitude = model.PickUpLatitude,
                 PickUpLongitude = model.PickUpLongitude,
-                Price=model.PriceRangeFrom,
-                IsUserRated=false
+                Price = model.PriceRangeFrom,
+                IsUserRated = false,
+                CreatedAt = DateTime.UtcNow
             };
 
             if (RequestItem.RequestItemML == null)
@@ -51,7 +52,7 @@ namespace BLL.Implementation
             RequestItem.RequestItemML.Add(new RequestItemML
             {
                 Name = model.Name,
-                ItemDescription= model.ItemDescription,
+                ItemDescription = model.ItemDescription,
                 DropOffLocation = model.DropOffLocation,
                 PickUpLocation = model.PickUpLocation,
                 Culture = culture
@@ -114,18 +115,30 @@ namespace BLL.Implementation
 
         public List<RequestItem> GetPendingRequests(int User_Id, int Items, int Page, CultureType culture)
         {
-            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x=>x.Driver).Where(x => (x.Status == (int)RequestItemStatus.Pending || x.Status == (int)RequestItemStatus.Requested) && x.User_Id == User_Id && x.IsDeleted == false).Skip(Items * Page).Take(Items).OrderBy(x => x.Id).ToList();
+            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x => x.Driver).Where(x => (x.Status == (int)RequestItemStatus.Pending || x.Status == (int)RequestItemStatus.Requested || x.Status == (int)RequestItemStatus.InProgress) && x.User_Id == User_Id && x.IsDeleted == false).Skip(Items * Page).Take(Items).OrderByDescending(x => x.Id).ToList();
         }
 
         public List<RequestItem> GetDeliveredOrCompletedRequests(int User_Id, int Items, int Page, CultureType culture)
         {
-            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x => x.Driver).Where(x => (x.Status == (int)RequestItemStatus.Delivered || x.Status == (int)RequestItemStatus.Completed || x.Status == (int)RequestItemStatus.Cancelled) && x.User_Id == User_Id && x.IsDeleted == false).Skip(Items * Page).Take(Items).OrderBy(x => x.Id).ToList();
+            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x => x.Driver).Where(x => (x.Status == (int)RequestItemStatus.Delivered || x.Status == (int)RequestItemStatus.Completed || x.Status == (int)RequestItemStatus.Cancelled) && x.User_Id == User_Id && x.IsDeleted == false).Skip(Items * Page).Take(Items).OrderByDescending(x => x.Id).ToList();
         }
 
         public RequestItem GetRequestById(int Request_Id, CultureType culture)
         {
-            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x => x.Driver).Include(x => x.Driver).Include(x => x.User).FirstOrDefault(x => x.Id == Request_Id);
+            return _dbContext.RequestItem.Include(x => x.RequestItemML).Include(x => x.RequestItemImages).Include(x => x.Driver).Include(x => x.DriverRating).Include(x => x.DriverRating.User).Include(x => x.User).FirstOrDefault(x => x.Id == Request_Id);
         }
+
+        public double GetDriverRatingOnly(int Driver_Id)
+        {
+            double AverageRating = 0.0;
+            var rating = _dbContext.Drivers.Include(x => x.DriverRating).FirstOrDefault(x => x.Id == Driver_Id);
+            if (rating.DriverRating != null && rating.DriverRating.Count>0)
+                AverageRating = Convert.ToDouble(rating.DriverRating.Where(x => x.Type == (int)RatingTypes.RateDriver).Average(x => x.Rating).ToString("F2"));
+
+            return AverageRating;
+
+        }
+
 
     }
 }

@@ -30,6 +30,10 @@ namespace DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<Store>().OwnsOne(c => c.Location);
+
+
             modelBuilder.Entity<User>()
                 .HasMany(a => a.DriverRating)
                 .WithOne(e => e.User)
@@ -42,8 +46,6 @@ namespace DAL
                 .IsRequired()
                 .HasForeignKey(x => x.Driver_Id)
                 .OnDelete(DeleteBehavior.Cascade);
-
-
 
             modelBuilder.Entity<Settings>()
                 .HasMany(a => a.SettingsML)
@@ -72,7 +74,6 @@ namespace DAL
                 .HasForeignKey(x => x.User_Id)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Store>().OwnsOne(c => c.Location);
 
             modelBuilder.Entity<RequestItem>()
                 .HasMany(a => a.RequestItemImages)

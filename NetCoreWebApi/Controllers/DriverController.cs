@@ -20,6 +20,7 @@ using Component.Models;
 using Component.Utility.Enums;
 using Component.Culture;
 using Component.Models.Driver;
+using BLL.Utility;
 
 namespace Wasalee.Controllers
 {
@@ -50,7 +51,7 @@ namespace Wasalee.Controllers
                     return BadRequest(ModelState);
 
                 if (_bODriver.Exists(model.Email))
-                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Conflict, StatusCode = StatusCodes.Status409Conflict, Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateAlreadyExists("License Number") } });
+                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Conflict, StatusCode = StatusCodes.Status409Conflict, Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateAlreadyExists("Email") } });
 
                 //_bODriver.InsertDriver(driver);
                 CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
@@ -86,6 +87,7 @@ namespace Wasalee.Controllers
                 CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
                 if (driver != null)
                 {
+                    driver.CalculateDriverAverageRating();
                     //var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
                     var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
                     //driverDTO = Mapper.Map(driver.DriverML.FirstOrDefault(x => x.Culture == culture), driverDTO);
@@ -305,7 +307,7 @@ namespace Wasalee.Controllers
                     {
                         Message = Global.ResponseMessages.Forbidden,
                         StatusCode = StatusCodes.Status403Forbidden,
-                        Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateInvalid("email or password") }
+                        Result = new Error { ErrorMessage = "New Password and Old Password can't be same" }
                     });
                 }
             }
@@ -331,7 +333,9 @@ namespace Wasalee.Controllers
 
                 if (Driver != null)
                 {
+                    Driver.CalculateDriverAverageRating();
                     driverProfile = Mapper.Map<Driver, DriverDTO>(Driver);
+                    driverProfile.GenerateToken(_configuration);
                     //Mapper.Map(Driver.DriverML.FirstOrDefault(x => x.Culture == CultureHelper.Culture), driverProfile);
                     return Ok(new CustomResponse<DriverDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = driverProfile });
                 }
@@ -359,11 +363,25 @@ namespace Wasalee.Controllers
 
                 DriverDetailsViewModel responseModel = new DriverDetailsViewModel();
 
-
                 var DriverDetails = _bODriver.GetDriverDetailsById(Driver_Id, culture);
-                responseModel.Driver = Mapper.Map<Driver, DriverDTO>(DriverDetails);
-                
-                return Ok(new CustomResponse<DriverDetailsViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = responseModel });
+
+                if (DriverDetails != null)
+                {
+                    DriverDetails.CalculateDriverAverageRating();
+                    //var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
+                    var driverDTO = Mapper.Map<Driver, DriverDTO>(DriverDetails);
+                    //driverDTO = Mapper.Map(driver.DriverML.FirstOrDefault(x => x.Culture == culture), driverDTO);
+                    driverDTO.GenerateToken(_configuration);
+                    return Ok(new CustomResponse<DriverDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = driverDTO });
+                }
+                else
+                {
+                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Forbidden, StatusCode = StatusCodes.Status403Forbidden, Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateNotFound("Driver") } });
+                }
+                //responseModel.Driver = Mapper.Map<Driver, DriverDTO>(DriverDetails);
+                //var DriverRatings = _bODriver.GetDriverRatings(Driver_Id, 10000, 0);
+                //responseModel.Driver.DriverRating = Mapper.Map<List<DriverRating>, List<DriverRatingDTO>>(DriverRatings);
+                //return Ok(new CustomResponse<DriverDetailsViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = responseModel });
             }
             catch (Exception ex)
             {
@@ -421,7 +439,7 @@ namespace Wasalee.Controllers
                 if (rateObj)
                 {
                     //response.Rating = Mapper.Map<DriverRating, DriverRatingDTO>(rateObj);
-                    return Ok(new CustomResponse<string> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = "Problem reported successfully."});
+                    return Ok(new CustomResponse<string> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = "Problem reported successfully." });
                 }
                 else
                     return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Forbidden, StatusCode = StatusCodes.Status403Forbidden, Result = new Error { ErrorMessage = "Something went wrong! Try again." } });
@@ -435,8 +453,84 @@ namespace Wasalee.Controllers
 
         [Authorize]
         [HttpGet]
+        [Route("StartRide")]
+        public IActionResult StartRide(int Driver_Id, int Request_Id)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
+
+                var driver = _bODriver.StartRide(Driver_Id, Request_Id);
+
+                if (driver != null)
+                {
+                    driver.CalculateDriverAverageRating();
+                    //var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
+                    var driverDTO = Mapper.Map<Driver, DriverDTO>(driver);
+                    //driverDTO = Mapper.Map(driver.DriverML.FirstOrDefault(x => x.Culture == culture), driverDTO);
+                    driverDTO.GenerateToken(_configuration);
+
+                    return Ok(new CustomResponse<DriverDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = driverDTO });
+                    //return Ok(new CustomResponse<string> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = "Status updated successfully." });
+
+                }
+                else
+                {
+                    return Ok(new CustomResponse<Error>
+                    {
+                        Message = Global.ResponseMessages.Forbidden,
+                        StatusCode = StatusCodes.Status403Forbidden,
+                        Result = new Error { ErrorMessage = "Request not found or already canceled." }
+                    });
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Error.LogError(ex));
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("EndRide")]
+        public IActionResult EndRide(int Driver_Id, int Request_Id)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
+
+                var status = _bODriver.EndRide(Driver_Id, Request_Id);
+
+                if (status)
+                    return Ok(new CustomResponse<string> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = "Status updated successfully." });
+                else
+                {
+                    return Ok(new CustomResponse<Error>
+                    {
+                        Message = Global.ResponseMessages.Forbidden,
+                        StatusCode = StatusCodes.Status403Forbidden,
+                        Result = new Error { ErrorMessage = "Request not found or already canceled." }
+                    });
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Error.LogError(ex));
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
         [Route("GetDriverRatings")]
-        public IActionResult GetDriverRatings(int Driver_Id,int? Items=3,int? Page=0)
+        public IActionResult GetDriverRatings(int Driver_Id, int? Items = 3, int? Page = 0)
         {
             try
             {
@@ -446,9 +540,9 @@ namespace Wasalee.Controllers
                 DriversRatingsViewModel responseModel = new DriversRatingsViewModel();
 
 
-                var DriverRatings = _bODriver.GetDriverRatings(Driver_Id,Items,Page);
+                var DriverRatings = _bODriver.GetDriverRatings(Driver_Id, Items, Page);
                 responseModel.Ratings = Mapper.Map<List<DriverRating>, List<DriverRatingDTO>>(DriverRatings);
-                responseModel.TotalRecords= _bODriver.GetTotalRatingsOfDriver(Driver_Id);
+                responseModel.TotalRecords = _bODriver.GetTotalRatingsOfDriver(Driver_Id);
 
                 return Ok(new CustomResponse<DriversRatingsViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = responseModel });
 

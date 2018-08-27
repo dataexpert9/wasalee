@@ -56,7 +56,7 @@ namespace NetCoreWebApi
 
 
 
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(@"Data Source=ISB-APPS-F136; initial catalog=Wasalee;User Id=sa; Password=Axact123;integrated security=false", b => b.UseRowNumberForPaging()));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(@"Data Source=35.160.175.165; initial catalog=Wasalee1;User Id=basket; Password=B@sket@312;integrated security=false", b => b.UseRowNumberForPaging()));
 
             services.AddTransient<IBOUser, BOUser>();
             services.AddTransient<IBOSettings, BLLSettings>();

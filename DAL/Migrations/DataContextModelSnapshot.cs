@@ -158,9 +158,15 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime?>("CompletedAt");
+
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<DateTime>("DeliveryDate");
 
                     b.Property<TimeSpan>("DeliveryTime");
+
+                    b.Property<int?>("DriverRating_Id");
 
                     b.Property<int?>("Driver_Id");
 
@@ -169,6 +175,8 @@ namespace DAL.Migrations
                     b.Property<double?>("DropOffLongitude");
 
                     b.Property<bool>("IsDeleted");
+
+                    b.Property<bool>("IsUserRated");
 
                     b.Property<string>("ItemDescription");
 
@@ -191,6 +199,8 @@ namespace DAL.Migrations
                     b.Property<int>("User_Id");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DriverRating_Id");
 
                     b.HasIndex("Driver_Id");
 
@@ -492,6 +502,10 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.RequestItem", b =>
                 {
+                    b.HasOne("DAL.DriverRating", "DriverRating")
+                        .WithMany()
+                        .HasForeignKey("DriverRating_Id");
+
                     b.HasOne("DAL.Driver", "Driver")
                         .WithMany("RequestItem")
                         .HasForeignKey("Driver_Id")

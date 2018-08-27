@@ -24,9 +24,12 @@ namespace DAL
         public string HomeAddress { get; set; }
         public string BriefInfo { get; set; }
         public string WorkHistory { get; set; }
+
         [NotMapped]
         public double AverageRating { get; set; }
+
         public virtual List<RequestItem> RequestItem { get; set; }
+
         [JsonIgnore]
         public virtual List<DriverRating> DriverRating { get; set; }
 

@@ -98,3 +98,25 @@ Unmapped properties:
 CreatedDate
 
 ------******------
+DateTime : 8/15/2018 3:46:08 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 217
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+
+Inner Exception : Cannot insert the value NULL into column 'Driver_Id', table 'Wasalee.dbo.DriverRating'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+------******------
+DateTime : 8/15/2018 3:47:44 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 217
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+
+Inner Exception : Cannot insert the value NULL into column 'Driver_Id', table 'Wasalee.dbo.DriverRating'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+------******------

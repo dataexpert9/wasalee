@@ -46,19 +46,20 @@ namespace BLL.Implementation
 
             if (Request != null)
             {
-                if(Request.Status != (int)RequestItemStatus.Cancelled) { 
-                Request.Status = (int)RequestItemStatus.Cancelled;
-
-                var cancelRequest = _dbContext.CancelItemReason.Add(new CancelItemReason
+                if (Request.Status != (int)RequestItemStatus.Cancelled)
                 {
-                    CancelAt = DateTime.UtcNow,
-                    ReportProblemMessage_Id = model.ReportProblemMessage_Id,
-                    RequestItem_Id = model.RequestItem_Id
-                });
+                    Request.Status = (int)RequestItemStatus.Cancelled;
+                    Request.CompletedAt = DateTime.UtcNow;
+                    var cancelRequest = _dbContext.CancelItemReason.Add(new CancelItemReason
+                    {
+                        CancelAt = DateTime.UtcNow,
+                        ReportProblemMessage_Id = model.ReportProblemMessage_Id,
+                        RequestItem_Id = model.RequestItem_Id
+                    });
 
-                _dbContext.SaveChanges();
+                    _dbContext.SaveChanges();
 
-                return true;
+                    return true;
                 }
             }
             return false;

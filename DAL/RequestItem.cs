@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DAL
@@ -40,6 +41,10 @@ namespace DAL
 
         public int User_Id { get; set; }
 
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime? CompletedAt { get; set; }
+
         public virtual  User User { get; set; }
 
         public List<RequestItemImages> RequestItemImages { get; set; }
@@ -49,6 +54,12 @@ namespace DAL
         public virtual Driver Driver { get; set; }
 
         public virtual List<RequestItemML> RequestItemML { get; set; }
+
+        [ForeignKey("DriverRating")]
+        public int? DriverRating_Id { get; set; }
+
+        public virtual DriverRating DriverRating { get; set; }
+
 
     }
 }

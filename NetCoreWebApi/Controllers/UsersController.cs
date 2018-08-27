@@ -170,6 +170,47 @@ namespace NetCoreWebApi.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("LoginAsGuest")]
+        public async Task<IActionResult> LoginAsGuest()
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                CultureType culture = CultureHelper.GetCulture(Request.HttpContext);
+
+                var user = _bOUser.LoginAsGuest();
+                var settings = _bOSettings.LoadSettings();
+                if (user != null)
+                {
+                    var userDTO = Mapper.Map<User, UserDTO>(user);
+                    if (settings.SettingsML != null)
+                        userDTO.Settings = Mapper.Map(settings.SettingsML.FirstOrDefault(x => x.Culture == culture), userDTO.Settings);
+                    else
+                        userDTO.Settings = new SettingDTO();
+
+                    userDTO.GenerateToken(_configuration);
+
+                    return Ok(new CustomResponse<UserDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = userDTO });
+                }
+                else
+                {
+                    return Ok(new CustomResponse<Error>
+                    {
+                        Message = Global.ResponseMessages.Forbidden,
+                        StatusCode = StatusCodes.Status403Forbidden,
+                        Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateInvalid("email or password") }
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(Error.LogError(ex));
+            }
+        }
+
         //[HttpPost]
         //[Route("SocialLogin")]
         //public async Task<IActionResult> SocialLogin(string accessToken, int? socialLoginType)
@@ -230,7 +271,7 @@ namespace NetCoreWebApi.Controllers
                     {
                         Message = Global.ResponseMessages.Forbidden,
                         StatusCode = StatusCodes.Status403Forbidden,
-                        Result = new Error { ErrorMessage = Global.ResponseMessages.GenerateInvalid("email or password") }
+                        Result = new Error { ErrorMessage = "New Password and Old Password can't be same" }
                     });
                 }
             }

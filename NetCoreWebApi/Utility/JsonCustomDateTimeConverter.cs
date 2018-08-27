@@ -13,4 +13,5 @@ namespace Wasalee.Utility
             DateTimeFormat = "yyyy-MM-ddThh:mm";
         }
     }
+
 }

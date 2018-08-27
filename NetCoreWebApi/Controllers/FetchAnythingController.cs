@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using BLL.Interface;
+using BLL.Utility;
 using Component.Culture;
 using Component.ResponseFormats;
 using Component.Utility;
@@ -54,10 +55,7 @@ namespace Wasalee.Controllers
                 if (requestItem != null)
                 {
                     var response = Mapper.Map<RequestItem, RequestItemDTO>(requestItem);
-                    //Mapper.Map(requestItem.RequestItemML.FirstOrDefault(x => x.Culture == CultureHelper.Culture), response);
-                    //Mapper.Map(response, resp);
                     Mapper.Map(requestItem.RequestItemML.FirstOrDefault(x => x.Culture == culture), response);
-
                     return Ok(new CustomResponse<RequestItemDTO> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = response });
                 }
                 else
@@ -91,11 +89,21 @@ namespace Wasalee.Controllers
                     #region Get Pending Requests
                     var PendingRequestItems = _bOFetch.GetPendingRequests(User_Id, Items, Page, culture);
 
+                    foreach (var req in PendingRequestItems)
+                    {
+                        if (req.Driver_Id != null && req.Driver != null)
+                            req.Driver.AverageRating = _bOFetch.GetDriverRatingOnly(req.Driver_Id.Value);
+
+                    }
+
+
+
                     if (PendingRequestItems != null)
                     {
                         Mapper.Map(PendingRequestItems, pendingResponse.Pending);
                         for (int i = 0; i < PendingRequestItems.Count; i++)
                         {
+                            
                             Mapper.Map(PendingRequestItems[i].RequestItemML.FirstOrDefault(y => y.Culture == culture), pendingResponse.Pending[i]);
                             //if (PendingRequestItems[i].Driver != null)
                             //    Mapper.Map(PendingRequestItems[i].Driver.DriverML.FirstOrDefault(y => y.Culture == culture), pendingResponse.Pending[i].Driver);
@@ -150,11 +158,27 @@ namespace Wasalee.Controllers
 
                 #region Get Pending Requests
                 var SingleRequest = _bOFetch.GetRequestById(Request_Id, culture);
-                responseModel.Request = Mapper.Map<RequestItem, RequestItemDTO>(SingleRequest);
-                Mapper.Map(SingleRequest.RequestItemML.FirstOrDefault(x => x.Culture == culture), responseModel.Request);
-                #endregion
+                if (SingleRequest != null)
+                {
+                    if (SingleRequest.Driver_Id != null)
+                        SingleRequest.Driver.AverageRating = _bOFetch.GetDriverRatingOnly(SingleRequest.Driver_Id.Value);
 
-                return Ok(new CustomResponse<RequestItemViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = responseModel });
+                    //if (SingleRequest.Driver != null)
+                    //{
+                    //    if (SingleRequest.Driver.DriverRating != null)
+                    //        SingleRequest.Driver.CalculateDriverAverageRating();
+                    //}
+                    responseModel.Request = Mapper.Map<RequestItem, RequestItemDTO>(SingleRequest);
+                    Mapper.Map(SingleRequest.RequestItemML.FirstOrDefault(x => x.Culture == culture), responseModel.Request);
+                    #endregion
+
+                    return Ok(new CustomResponse<RequestItemViewModel> { Message = Global.ResponseMessages.Success, StatusCode = StatusCodes.Status200OK, Result = responseModel });
+                }
+                else
+                {
+                    return Ok(new CustomResponse<Error> { Message = Global.ResponseMessages.Conflict, StatusCode = StatusCodes.Status409Conflict, Result = new Error { ErrorMessage = "Driver not found." } });
+
+                }
             }
             catch (Exception ex)
             {

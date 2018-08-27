@@ -23,7 +23,9 @@
         Pending,
         Delivered,
         Completed,
-        Cancelled
+        Cancelled,
+        InProgress
+
     }
     public enum RequestPaymentStatus
     {

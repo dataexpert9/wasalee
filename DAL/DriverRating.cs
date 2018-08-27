@@ -25,7 +25,6 @@ namespace DAL
 
         public int? User_Id { get; set; }
 
-
         public virtual User User { get; set; }
 
         [ForeignKey("ReportProblemMessage")]

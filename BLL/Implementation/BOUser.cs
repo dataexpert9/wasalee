@@ -37,10 +37,14 @@ namespace BLL.Implementation
             }
         }
 
-        public User InsertUser(RegisterBindingModel user,CultureType culture)
+        public User InsertUser(RegisterBindingModel user, CultureType culture)
         {
             try
             {
+                if (user.FullName.Length > 1)
+                    user.FullName = char.ToUpper(user.FullName[0]) + user.FullName.Substring(1);
+
+
                 var NewUser = new User
                 {
                     Email = user.Email,
@@ -66,7 +70,7 @@ namespace BLL.Implementation
             }
         }
 
-        public User AuthenticateCredentials(string username, string password,CultureType culture)
+        public User AuthenticateCredentials(string username, string password, CultureType culture)
         {
             try
             {
@@ -93,7 +97,16 @@ namespace BLL.Implementation
                 var OldhashPass = CryptoHelper.Hash(OldPassword);
                 var NewhashPass = CryptoHelper.Hash(NewPassword);
 
+
                 var user = _dbContext.Users.FirstOrDefault(x => x.Id == User_Id && x.Password == OldhashPass);
+
+
+                if (user.Password == NewhashPass)
+                {
+                    return false;
+                }
+
+
                 if (user == null)
                     return false;
                 else
@@ -134,6 +147,11 @@ namespace BLL.Implementation
             else
                 return false;
 
+        }
+
+        public User LoginAsGuest()
+        {
+            return _dbContext.Users.FirstOrDefault(x => x.Email.Contains("Guest"));
         }
 
         //public User SocialLogin(string accessToken, int? socialLoginType)

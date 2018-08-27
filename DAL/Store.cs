@@ -15,6 +15,9 @@ namespace DAL
 
         public string Name { get; set; }
 
+        public Location Location { get; set; }
+
+
         //public double? Latitude { get; set; }
 
         //public double? Longitude { get; set; }
@@ -49,14 +52,6 @@ namespace DAL
 
         public string About { get; set; }
 
-        //[ComplexType]
-        //public class Location
-        //{
-        //    public double Longitude { get; set; }
-
-        //    public double Latitude { get; set; }
-        //}
-        public Location Location { get; set; }
 
         public virtual StoreTiming StoreTiming { get; set; }
 

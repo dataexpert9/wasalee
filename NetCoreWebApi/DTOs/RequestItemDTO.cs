@@ -90,6 +90,10 @@ namespace Wasalee.DTOs
 
         public bool IsUserRated { get; set; }
 
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime? CompletedAt { get; set; }
+
         public List<RequestItemImagesDTO> RequestItemImages { get; set; }
 
         public UserDTO User { get; set; }

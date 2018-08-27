@@ -1183,3 +1183,328 @@ Unmapped properties:
 CreatedDate
 
 ------******------
+DateTime : 8/13/2018 11:58:36 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 80
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : Invalid column name 'IsUserRated'.
+------******------
+DateTime : 8/13/2018 11:59:33 AM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at BLL.Implementation.BOFetch.RequestItem(RequestItemBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 80
+   at Wasalee.Controllers.FetchAnythingController.RequestItem(RequestItemBindingModel model) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 53
+
+Inner Exception : Invalid column name 'IsUserRated'.
+------******------
+DateTime : 8/13/2018 3:56:03 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 204
+   at Wasalee.Controllers.DriverController.<RateDriver>d__16.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/13/2018 3:58:19 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 204
+   at Wasalee.Controllers.DriverController.<RateDriver>d__16.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+
+Inner Exception : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DriverRating_Users_User_Id". The conflict occurred in database "Wasalee", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+------******------
+DateTime : 8/14/2018 12:04:36 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.DTOs.DriverDTO..ctor() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\DTOs\DriverDTO.cs:line 15
+   at Wasalee.ViewModels.DriverDetailsViewModel..ctor() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\ViewModels\DriverViewModels.cs:line 24
+   at Wasalee.Controllers.DriverController.GetDriverDetailsById(Int32 Driver_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 360
+DateTime : 8/14/2018 12:04:55 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.DTOs.DriverDTO..ctor() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\DTOs\DriverDTO.cs:line 15
+   at Wasalee.ViewModels.DriverDetailsViewModel..ctor() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\ViewModels\DriverViewModels.cs:line 24
+   at Wasalee.Controllers.DriverController.GetDriverDetailsById(Int32 Driver_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 360
+DateTime : 8/14/2018 12:05:11 PM
+
+
+MessageError mapping types.
+
+Mapping types:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Type Map configuration:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Property:
+DriverRating
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverDetailsById(Int32 Driver_Id)
+
+Inner Exception : Object reference not set to an instance of an object.
+------******------
+DateTime : 8/14/2018 12:05:16 PM
+
+
+MessageError mapping types.
+
+Mapping types:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Type Map configuration:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Property:
+DriverRating
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverDetailsById(Int32 Driver_Id)
+
+Inner Exception : Object reference not set to an instance of an object.
+------******------
+DateTime : 8/14/2018 12:05:38 PM
+
+
+MessageError mapping types.
+
+Mapping types:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Type Map configuration:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Property:
+DriverRating
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverDetailsById(Int32 Driver_Id)
+
+Inner Exception : Object reference not set to an instance of an object.
+------******------
+DateTime : 8/14/2018 12:29:07 PM
+
+
+MessageError mapping types.
+
+Mapping types:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Type Map configuration:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Property:
+DriverRating
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverDetailsById(Int32 Driver_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 364
+
+Inner Exception : Object reference not set to an instance of an object.
+------******------
+DateTime : 8/14/2018 12:30:01 PM
+
+
+MessageError mapping types.
+
+Mapping types:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Type Map configuration:
+Driver -> DriverDTO
+DAL.Driver -> Wasalee.DTOs.DriverDTO
+
+Property:
+DriverRating
+
+StackTrace   at lambda_method(Closure , Driver , DriverDTO , ResolutionContext )
+   at Wasalee.Controllers.DriverController.GetDriverDetailsById(Int32 Driver_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 364
+
+Inner Exception : Object reference not set to an instance of an object.
+------******------
+DateTime : 8/15/2018 3:48:48 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 217
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+
+Inner Exception : Cannot insert the value NULL into column 'Driver_Id', table 'Wasalee.dbo.DriverRating'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+------******------
+DateTime : 8/15/2018 3:48:59 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 217
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+
+Inner Exception : Cannot insert the value NULL into column 'Driver_Id', table 'Wasalee.dbo.DriverRating'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+------******------
+DateTime : 8/15/2018 3:49:51 PM
+
+
+MessageAn error occurred while updating the entries. See the inner exception for details.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 217
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+
+Inner Exception : Cannot insert the value NULL into column 'Driver_Id', table 'Wasalee.dbo.DriverRating'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+------******------
+DateTime : 8/15/2018 4:22:24 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 217
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+DateTime : 8/15/2018 4:22:32 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BODriver.RateDriver(RateDriverBindingModel model, CultureType culture) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 217
+   at Wasalee.Controllers.DriverController.<RateDriver>d__15.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 387
+DateTime : 8/16/2018 9:52:33 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetRequestById(Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 154
+DateTime : 8/16/2018 9:53:07 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetRequestById(Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 154
+DateTime : 8/16/2018 9:53:11 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetRequestById(Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 154
+DateTime : 8/16/2018 9:53:40 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetRequestById(Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 154
+DateTime : 8/16/2018 2:19:05 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BODriver.AcceptRequest(Int32 Driver_Id, Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 114
+   at Wasalee.Controllers.DriverController.<AcceptRequest>d__10.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 215
+DateTime : 8/16/2018 2:19:29 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BODriver.AcceptRequest(Int32 Driver_Id, Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 114
+   at Wasalee.Controllers.DriverController.<AcceptRequest>d__10.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 215
+DateTime : 8/16/2018 2:19:53 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BODriver.AcceptRequest(Int32 Driver_Id, Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 114
+   at Wasalee.Controllers.DriverController.<AcceptRequest>d__10.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 215
+DateTime : 8/16/2018 2:23:32 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BODriver.AcceptRequest(Int32 Driver_Id, Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 114
+   at Wasalee.Controllers.DriverController.<AcceptRequest>d__10.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 215
+DateTime : 8/16/2018 2:23:46 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BODriver.AcceptRequest(Int32 Driver_Id, Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BODriver.cs:line 114
+   at Wasalee.Controllers.DriverController.<AcceptRequest>d__10.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\DriverController.cs:line 215
+DateTime : 8/18/2018 11:16:16 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.ChangeUserPassword(Int32 User_Id, String OldPassword, String NewPassword) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 119
+   at NetCoreWebApi.Controllers.UsersController.<ChangeUserPassword>d__11.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 258
+DateTime : 8/18/2018 4:03:19 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetRequestById(Int32 Request_Id) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 153
+DateTime : 8/20/2018 10:25:59 AM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BLL.Implementation.BOUser.ChangeUserPassword(Int32 User_Id, String OldPassword, String NewPassword) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOUser.cs:line 119
+   at NetCoreWebApi.Controllers.UsersController.<ChangeUserPassword>d__11.MoveNext() in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\UsersController.cs:line 258
+DateTime : 8/20/2018 1:02:48 PM
+
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at Wasalee.Controllers.FetchAnythingController.GetRequestById(Int32 Request_Id)
+DateTime : 8/20/2018 3:13:22 PM
+
+
+MessageSequence contains no elements
+
+StackTrace   at System.Linq.Enumerable.Average[TSource](IEnumerable`1 source, Func`2 selector)
+   at BLL.Implementation.BOFetch.GetDriverRatingOnly(Int32 Driver_Id) in F:\Projects\Wasalee\WasalLeeAPI\BLL\Implementation\BOFetch.cs:line 136
+   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page, Nullable`1 Type) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 95
+DateTime : 8/20/2018 3:14:28 PM
+
+
+MessageSequence contains no elements
+
+StackTrace   at System.Linq.Enumerable.Average[TSource](IEnumerable`1 source, Func`2 selector)
+   at BLL.Implementation.BOFetch.GetDriverRatingOnly(Int32 Driver_Id)
+   at Wasalee.Controllers.FetchAnythingController.GetMyBookings(Int32 Items, Int32 Page, Nullable`1 Type) in F:\Projects\Wasalee\WasalLeeAPI\NetCoreWebApi\Controllers\FetchAnythingController.cs:line 95

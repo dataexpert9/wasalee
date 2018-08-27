@@ -12,6 +12,7 @@ namespace Wasalee.DTOs
         public DriverDTO()
         {
             DriverRating = new List<DriverRatingDTO>();
+            //FullName = FullName.Substring(0, 1).ToUpper() + FullName.Substring(1, FullName.Length).ToUpper();
         }
         public int Id { get; set; }
         public string FullName { get; set; }
@@ -34,6 +35,7 @@ namespace Wasalee.DTOs
     }
     public class DriverRatingDTO
     {
+
         public DriverRatingDTO()
         {
             User = new UserDTO();
@@ -47,9 +49,10 @@ namespace Wasalee.DTOs
 
         public int Driver_Id { get; set; }
 
-        //[JsonConverter(typeof(JsonCustomDateTimeConverter))]
+        [JsonConverter(typeof(JsonCustomDateTimeConverter))]
         public DateTime CreatedDate { get; set; }
 
+        [JsonConverter(typeof(JsonCustomDateTimeConverter))]
         public DateTime RatedAt { get; set; }
 
         public int? User_Id { get; set; }
